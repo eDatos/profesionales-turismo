@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<encuesta>
+  <bloque identificador="A">
+    <titulo>MARCHA GENERAL DEL NEGOCIO</titulo>
+    <comentario><![CDATA[<b>Importante</b>: para las siguientes preguntas, responda, por favor, para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>,]]></comentario>
+    <preguntas>
+      <pregunta tipo="3" apartado="A.1">
+        <titulo>¿Cómo valoraría la marcha del negocio en su establecimiento?</titulo>
+        <!-- Comentario para el grabador  -->
+        <comentario_grabador>1=Favorable, 2=Normal, 3=Desfavorable</comentario_grabador>
+        <valores>
+          <valor num="1" texto="Favorable"/>
+          <valor num="2" texto="Normal"/>
+          <valor num="3" texto="Desfavorable"/>
+        </valores>
+        <opciones>
+          <opcion nombre="MARCHA_NEGOCIO_TACTUAL" requerida="1">
+            <texto>En el trimestre que está acabando</texto>
+          </opcion>
+          <opcion nombre="MARCHA_NEGOCIO_TSIGUIENTE" requerida="1">
+            <texto>Para el trimestre que va a comenzar</texto>
+          </opcion>
+        </opciones>
+      </pregunta>
+      <pregunta tipo="5" apartado="A.2.1">
+      	<titulo><![CDATA[En el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, ¿qué tendencia han seguido las siguientes variables en su establecimiento respecto a los trimestres indicados?]]></titulo>
+      	<comentario_grabador>1=Aumento, 2=Estabilidad, 3=Descenso</comentario_grabador>
+        <cabecera>Respecto al trimestre anterior ([RECOGIDA_TRES_MESES_ANTERIOR_ANTERIOR_AÑO])</cabecera>
+        <valores>
+          <valor num="1" texto="Aumento"/>
+          <valor num="2" texto="Estabilidad"/>
+          <valor num="3" texto="Descenso"/>
+        </valores>
+        <opciones>
+          <opcion nombre="FACTURACION_TANTERIOR" requerida="1">
+            <texto>Facturación (volumen de negocio)</texto>
+          </opcion>
+          <opcion nombre="EMPLEO_TANTERIOR" requerida="1">
+            <texto>Empleo (personal contratado)</texto>
+          </opcion>
+          <opcion nombre="INVERSION_TANTERIOR" requerida="1">
+            <texto>Inversión</texto>
+          </opcion>
+          <opcion nombre="NIVEL_PRECIOS_TANTERIOR" requerida="1">
+            <texto>Nivel de precios</texto>
+          </opcion>
+        </opciones>        
+      </pregunta>
+      <pregunta tipo="5" apartado="A.2.2">
+      	<titulo><![CDATA[En el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, ¿qué tendencia han seguido las siguientes variables en su establecimiento respecto a los trimestres indicados?]]></titulo>
+      	<comentario_grabador>1=Aumento, 2=Estabilidad, 3=Descenso</comentario_grabador>
+        <cabecera>Respecto al mismo trimestre del año anterior ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO_ANTERIOR])</cabecera>
+        <valores>
+          <valor num="1" texto="Aumento"/>
+          <valor num="2" texto="Estabilidad"/>
+          <valor num="3" texto="Descenso"/>
+        </valores>
+        <opciones>
+          <opcion nombre="FACTURACION_TAN_ANYOANTERIOR" requerida="1">
+            <texto>Facturación (volumen de negocio)</texto>
+          </opcion>
+          <opcion nombre="EMPLEO_TAN_ANYOANTERIOR" requerida="1">
+            <texto>Empleo (personal contratado)</texto>
+          </opcion>
+          <opcion nombre="INVERSION_TAN_ANYOANTERIOR" requerida="1">
+            <texto>Inversión</texto>
+          </opcion>
+          <opcion nombre="NIVEL_PRECIOS_TAN_ANYOANTERIOR" requerida="1">
+            <texto>Nivel de precios</texto>
+          </opcion>
+        </opciones>
+        </pregunta>
+        <pregunta tipo="5" apartado="A.3.1">
+        	<titulo><![CDATA[Para el próximo <b>trimestre ([PROXIMOS_TRES_MESES_AÑO])</b>, ¿qué tendencia cree que seguirán las siguientes variables en su establecimiento respecto a los trimestres indicados?]]></titulo>
+        	<cabecera><![CDATA[Respecto al trimestre anterior ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])]]></cabecera>
+			<comentario_grabador>1=Aumento, 2=Estabilidad, 3=Descenso</comentario_grabador>
+	        <valores>
+	          <valor num="1" texto="Aumento"/>
+	          <valor num="2" texto="Estabilidad"/>
+	          <valor num="3" texto="Descenso"/>
+	        </valores> 
+	        <opciones>
+	          	<opcion nombre="FACTURACION_TACTUAL" requerida="1">
+    	        	<texto>Facturación (volumen de negocio)</texto>
+	          	</opcion>
+	          	<opcion nombre="EMPLEO_TACTUAL" requerida="1">
+	            	<texto>Empleo (personal contratado)</texto>
+	          	</opcion>
+	          	<opcion nombre="INVERSION_TACTUAL" requerida="1">
+	            	<texto>Inversión</texto>
+	          	</opcion>
+	          	<opcion nombre="NIVEL_PRECIOS_TACTUAL" requerida="1">
+	            	<texto>Nivel de precios</texto>
+	          	</opcion>
+        	</opciones> 
+        </pregunta>
+        <pregunta tipo="5" apartado="A.3.2">
+        	<titulo><![CDATA[Para el próximo <b>trimestre ([PROXIMOS_TRES_MESES_AÑO])</b>, ¿qué tendencia cree que seguirán las siguientes variables en su establecimiento respecto a los trimestres indicados?]]></titulo>
+			<cabecera><![CDATA[Respecto al mismo trimestre del año anterior ([PROXIMOS_TRES_MESES_AÑO_ANTERIOR])]]></cabecera>
+			<comentario_grabador>1=Aumento, 2=Estabilidad, 3=Descenso</comentario_grabador>
+	        <valores>
+	          <valor num="1" texto="Aumento"/>
+	          <valor num="2" texto="Estabilidad"/>
+	          <valor num="3" texto="Descenso"/>
+	        </valores>	
+        	<opciones>
+	          	<opcion nombre="FACTURACION_TAC_ANYOANTERIOR" requerida="1">
+    	        <texto>Facturación (volumen de negocio)</texto>
+          	</opcion>
+          	<opcion nombre="EMPLEO_TAC_ANYOANTERIOR" requerida="1">
+            	<texto>Empleo (personal contratado)</texto>
+          	</opcion>
+          	<opcion nombre="INVERSION_TAC_ANYOANTERIOR" requerida="1">
+            	<texto>Inversión</texto>
+          	</opcion>
+          	<opcion nombre="NIVEL_PRECIOS_TAC_ANYOANTERIOR" requerida="1">
+            	<texto>Nivel de precios</texto>
+          	</opcion>
+        </opciones> 	        		
+        </pregunta>
+    </preguntas>
+  </bloque>
+  <bloque identificador="B">
+  	<titulo>FACTORES QUE INFLUYEN EN EL NEGOCIO</titulo>
+  	<preguntas>
+  		<pregunta tipo="6" apartado="B.1">
+  			<titulo><![CDATA[Para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, ¿qué factores cree Vd. que limitan la actividad de su establecimiento o la marcha de su negocio?]]></titulo>
+  			<comentario>(Señale todas las opciones que considere más relevantes)</comentario>
+  			<comentario_grabador>1=Sí, 6=No</comentario_grabador>
+	  		<valores>
+	          <valor num="1"/>
+	        </valores>
+	        <opciones>
+	          <opcion nombre="DEBILIDAD_DEMANDA" sinvalor="6">
+	            <texto>Debilidad de la demanda</texto>
+	          </opcion>	        
+	          <opcion nombre="ESCASEZ_MANO_OBRA_ADECUADA" sinvalor="6">
+	            <texto>Escasez de mano de obra adecuada</texto>
+	          </opcion>	        
+	          <opcion nombre="INSUFICIENCIA_EQUIPAMIENTO" sinvalor="6">
+	            <texto>Insuficiencia de equipamiento</texto>
+	          </opcion>	        
+	          <opcion nombre="DIFICULTADES_FINANCIERAS" sinvalor="6">
+	            <texto>Dificultades financieras</texto>
+	          </opcion>	        
+	          <opcion nombre="AUMENTO_COMPETENCIA" sinvalor="6">
+	            <texto>Aumento de la competencia</texto>
+	          </opcion>	        
+	          <opcion nombre="OTRAS_CAUSAS" sinvalor="6">
+	            <texto>Otras causas</texto>
+	          </opcion>	        
+	        </opciones>
+	     </pregunta>
+  		<pregunta tipo="1" apartado="B.2">
+  			<titulo><![CDATA[Para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, valore los efectos de las políticas aplicadas por las Administraciones Públicas, sobre la marcha de su establecimiento.]]></titulo>
+  			<comentario_grabador>1=Muy desfavorable, 2=Desfavorable, 3=No influye, 4=Favorable, 5=Muy favorable</comentario_grabador>
+	        <valores>
+	          <valor num="1" texto="Muy desfavorable"/>
+	          <valor num="2" texto="Desfavorable"/>
+	          <valor num="3" texto="No influye"/>
+	          <valor num="4" texto="Favorable"/>
+	          <valor num="5" texto="Muy favorable"/>	          	          
+	        </valores>
+	        <opciones>
+	          <opcion nombre="PROMOCION_TURISTICA" sinvalor="-9">
+	            <texto>Promoción turística</texto>
+	          </opcion>
+	          <opcion nombre="INFRAESTRUCTURAS" sinvalor="-9">
+	            <texto>Infraestructuras</texto>
+	          </opcion>
+	          <opcion nombre="APOYO_OFERTA_COMPLEMENTARIA" sinvalor="-9">
+	            <texto>Apoyo a la oferta complementaria</texto>
+	          </opcion>
+	          <opcion nombre="PROTECCION_AMBIENTAL" sinvalor="-9">
+	            <texto>Protección ambiental</texto>
+	          </opcion>
+	          <opcion nombre="LIMPIEZA_CUIDADO_ENTORNO" sinvalor="-9">
+	            <texto>Limpieza y cuidado del entorno</texto>
+	          </opcion>
+	          <opcion nombre="SEGURIDAD" sinvalor="-9">
+	            <texto>Seguridad</texto>
+	          </opcion>
+	          <opcion nombre="FISCALIDAD" sinvalor="-9">
+	            <texto>Fiscalidad</texto>
+	          </opcion>
+	          <opcion nombre="FORMACION" sinvalor="-9">
+	            <texto>Formación</texto>
+	          </opcion>
+	          <opcion nombre="NORMATIVA_SECTOR_ALOJATIVO" sinvalor="-9">
+	            <texto>Normativa del sector alojativo</texto>
+	          </opcion>
+	          <opcion nombre="ORDENACION_URBANISTICA" sinvalor="-9">
+	            <texto>Ordenación urbanística</texto>
+	          </opcion>
+	        </opciones>
+	     </pregunta>
+  		<pregunta tipo="1" apartado="B.3">
+  			<titulo><![CDATA[Para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, valore los efectos sobre la marcha de su establecimiento de los siguientes factores externos.]]></titulo>
+  			<comentario_grabador>1=Muy desfavorable, 2=Desfavorable, 3=No influye, 4=Favorable, 5=Muy favorable</comentario_grabador>
+	        <valores>
+	          <valor num="1" texto="Muy desfavorable"/>
+	          <valor num="2" texto="Desfavorable"/>
+	          <valor num="3" texto="No influye"/>
+	          <valor num="4" texto="Favorable"/>
+	          <valor num="5" texto="Muy favorable"/>	          	          
+	        </valores>
+	        <opciones>
+	          <opcion nombre="CRISIS_ECONOMICA" sinvalor="-9">
+	            <texto>Crisis económica</texto>
+	          </opcion>
+	          <opcion nombre="CONFLICTOS_INTERNACIONALES" sinvalor="-9">
+	            <texto>Conflictos internacionales</texto>
+	          </opcion>
+	          <opcion nombre="COMPETENCIA_OTROS_DESTINOS" sinvalor="-9">
+	            <texto>Competencia de otros destinos</texto>
+	          </opcion>
+	          <opcion nombre="POLITICA_TOUROPERADORES" sinvalor="-9">
+	            <texto>Política de touroperadores</texto>
+	          </opcion>
+	          <opcion nombre="PRECIOS_TRANSPORTE_AEREO_MAR" sinvalor="-9">
+	            <texto>Precios transporte aéreo y marítimo</texto>
+	          </opcion>
+	          <opcion nombre="REDUCCION_ESTANCIA_MEDIA" sinvalor="-9">
+	            <texto>Reducción estancia media</texto>
+	          </opcion>
+	          <opcion nombre="OFERTA_COMPLEMENTARIA" sinvalor="-9">
+	            <texto>Oferta complementaria</texto>
+	          </opcion>
+	          <opcion nombre="FACTORES_CLIMATOLOGICOS" sinvalor="-9">
+	            <texto>Factores climatológicos</texto>
+	          </opcion>
+	          <opcion nombre="SITUACION_SOCIAL" sinvalor="-9">
+	            <texto>Situación social</texto>
+	          </opcion>
+	          <opcion nombre="PERCEPCION_SOCIAL_TURISMO" sinvalor="-9">
+	            <texto>Percepción social del turismo</texto>
+	          </opcion>
+	        </opciones>
+	     </pregunta>	     	     
+	  </preguntas>
+  </bloque>		
+  <bloque identificador="C">
+  	<titulo>EXPECTATIVAS SOBRE EL GRADO DE OCUPACIÓN</titulo>
+  	<preguntas>
+  		<pregunta tipo="3" apartado="C.1">
+  			<titulo><![CDATA[Para el <b>trimestre que va a comenzar ([PROXIMOS_TRES_MESES_AÑO])</b>, en relación al mismo trimestre del año anterior, ¿cuál es la tendencia prevista en el grado de ocupación en su establecimiento?]]></titulo>
+  			<comentario_grabador>1=Aumento, 2=Estabilidad, 3=Descenso</comentario_grabador>
+	        <valores>
+	          <valor num="1" texto="Aumento"/>
+	          <valor num="2" texto="Estabilidad"/>
+	          <valor num="3" texto="Descenso"/>
+	        </valores>
+        	<opciones>
+	          	<opcion nombre="TENDENCIA_GRADO_OCUPACION" requerida="1">
+    	        	<texto>Tendencia prevista</texto>
+          		</opcion>
+        	</opciones> 	        
+  		</pregunta>
+  		<pregunta tipo="3" apartado="C.2">
+  			<titulo><![CDATA[Para el <b>trimestre que va a comenzar ([PROXIMOS_TRES_MESES_AÑO])</b>, el grado de ocupación por habitaciones previsto para cada mes es:]]></titulo>
+  			<comentario_grabador>1=del 90% al 100%, 2=del 75% al 89%, 3=del 50% al 74%, 4=del 25% al 49%, 5=del 10% al 24%, 6=del 0% al 9%, 7=No disponemos de previsiones</comentario_grabador>
+  			<valores>
+				<valor num="1" texto="del 90% al 100%,"/>
+				<valor num="2" texto="del 75% al 89%,"/>
+				<valor num="3" texto="del 50% al 74%,"/>
+				<valor num="4" texto="del 25% al 49%,"/>
+				<valor num="5" texto="del 10% al 24%,"/>
+				<valor num="6" texto="del 0% al 9%,"/>
+				<valor num="7" texto="No disponemos de previsiones"/> 				
+  			</valores>
+        	<opciones>
+	          	<opcion nombre="PREVISION_OCUPACION_MES1" requerida="1">
+    	        	<texto>1º mes ([PRIMER_MES])</texto>
+          		</opcion>
+          		<opcion nombre="PREVISION_OCUPACION_MES2" requerida="1">
+            		<texto>2º mes ([SEGUNDO_MES])</texto>
+          		</opcion>
+          		<opcion nombre="PREVISION_OCUPACION_MES3" requerida="1">
+            		<texto>3º mes ([TERCER_MES])</texto>
+          		</opcion>
+	        </opciones>  			
+  		</pregunta>
+  		<pregunta tipo="3" apartado="C.3">
+  			<titulo><![CDATA[Para el <b>trimestre que va a comenzar ([PROXIMOS_TRES_MESES_AÑO])</b>, en relación al mismo trimestre del año anterior, la evolución de los alojados por nacionalidades esperamos que sea de:]]></titulo>
+  			<comentario_grabador>1=Aumento, 2=Estabilidad, 3=Descenso</comentario_grabador>
+	        <valores>
+	          <valor num="1" texto="Aumento"/>
+	          <valor num="2" texto="Estabilidad"/>
+	          <valor num="3" texto="Descenso"/>
+	        </valores>
+        	<opciones>
+	          	<opcion nombre="EVOLUC_OCUPACION_ALEMANES" requerida="1">
+    	        	<texto>Alemanes</texto>
+          		</opcion>
+          		<opcion nombre="EVOLUC_OCUPACION_INGLESES" requerida="1">
+            		<texto>Ingleses</texto>
+          		</opcion>
+          		<opcion nombre="EVOLUC_OCUPACION_ESPANYOLES" requerida="1">
+            		<texto>Españoles</texto>
+          		</opcion>
+	          	<opcion nombre="EVOLUC_OCUPACION_NORDICOS" requerida="1">
+    	        	<texto>Nórdicos</texto>
+          		</opcion>
+          		<opcion nombre="EVOLUC_OCUPACION_RESTO_EUROPA" requerida="1">
+            		<texto>Resto de Europa</texto>
+          		</opcion>
+          		<opcion nombre="EVOLUC_OCUPACION_RESTO_MUNDO" requerida="1">
+            		<texto>Resto del Mundo</texto>
+          		</opcion>          		
+	        </opciones>	        
+  		</pregunta>
+  	</preguntas>
+  </bloque>
+</encuesta>

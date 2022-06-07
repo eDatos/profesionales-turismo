@@ -1,0 +1,5 @@
+# EVITA QUE SE PUEDA NAVEGAR DIRECTAMENTE A LAS VISTAS.
+<Files *.*>
+     Order Deny,Allow
+     Deny from All
+</Files>

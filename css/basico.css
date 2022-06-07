@@ -1,0 +1,168 @@
+body											{background:url(../img/maqueta/fondo3.gif) #c4d0dc repeat-y center 50%;font:70% Arial, Helvetica, sans-serif;margin:0;text-align:center;}
+a img                                        {border:none;}
+#contenido									{background:#fff;border-style:none;height:auto;margin:0 auto;padding:0;text-align:left;width:762px;}
+
+/******************************************************** CABECERA *****************************************************************************************/
+
+#cabecera									{float:left;margin:0; border-bottom:#d7dddb 1px solid; border-left:#d7dddb 1px solid;border-right:#d7dddb 1px solid;padding-bottom:5px;width:760px;}
+#cabecera #cab_superior 						{text-align: right; width:760px;}
+#cabecera #cab_superior ul 					{margin:7px 0 0 0; padding:0;}
+#cabecera #cab_superior ul li 					{display:inline;font-size:0.9em;list-style-type:none;padding:0 5px 0 0;}
+#cabecera #cab_superior ul li a					{color:#535353; text-decoration:none; margin-right:7px;}
+#cabecera #cab_superior ul li a:hover			{text-decoration:underline;}
+
+#cabecera #menu_contextual 					{background-color:#036;clear:both;float:left;height:22px;width:760px;}
+#cabecera #menu_contextual ul.menu 			{float:left; margin:0; padding:0 1px 0 1px;}
+#cabecera #menu_contextual ul.menu li 			{display:inline; margin-right:5px; text-transform:uppercase;}
+#cabecera #menu_contextual ul.menu li a 			{color:#fff;float:left;font:0.9em Arial, Helvetica, sans-serif;margin-left:3px;padding:5px 21px 3px 22px;text-decoration:none;font-weight:bold;}
+#cabecera #menu_contextual ul.menu li a:hover 	{background-color:#3478B0;margin-left:3px;text-decoration:none;}
+#cabecera #menu_contextual ul.menu li.selec a 	{background-color:#3478B0;color:#fff;display:inline;float:left;font-weight:bold;text-decoration:none;}
+#cabecera #menu_contextual #version			{color:#fff;float:right;font:0.75em Arial, Helvetica, sans-serif;margin:0;padding:5px;text-decoration:none;font-weight:bold;}
+
+#cabecera #menu_contextual #formulario_google 						{float:right}
+#cabecera #menu_contextual #formulario_google .texto					{font:0.9em bold Arial, Helvetica, sans-serif; color:#ffffff;margin-top:1px;}
+#cabecera #menu_contextual #formulario_google .buscar					{border:#535353 1px solid; color:#535353; font:0.9em Arial, Helvetica, sans-serif; margin-top:1px; height:14px;width:108px;}
+#cabecera #menu_contextual #formulario_google .boton_busqueda			{font:0.9em bold Arial, Helvetica, sans-serif;	font-weight: bold; text-transform:uppercase;text-decoration:none;color:#ffffff;padding-right:3px; padding-top:3px;margin-right:3px}
+#cabecera #menu_contextual #formulario_google .boton_busqueda:hover	{background-color:#3478B0;text-decoration:none}
+#cabecera #menu_contextual #formulario_google INPUT.boton 				{margin: 0px 5px 0px 0px; BORDER-RIGHT: #036 1px solid;  BORDER-TOP: #036 1px solid; BORDER-LEFT: #036 1px solid; CURSOR: default; COLOR:white; BORDER-BOTTOM: #036 1px solid; BACKGROUND-COLOR:#036; font:0.9em bold Arial, Helvetica, sans-serif; font-weight: bold; text-transform:uppercase; height:20px;}
+#cabecera #menu_contextual #formulario_google INPUT.boton:hover		{margin: 0px 5px 0px 0px; BORDER-RIGHT: #3478B0 1px solid;	BORDER-TOP: #3478B0 1px solid; 	BORDER-LEFT: #3478B0 1px solid; 	CURSOR: default; 	COLOR:white; 	BORDER-BOTTOM: #3478B0 1px solid;	BACKGROUND-COLOR:#3478B0; 	font:0.9em bold Arial, Helvetica, sans-serif; font-weight: bold; text-transform:uppercase; height:20px;}
+#cabecera #menu_contextual #formulario_google INPUT.boton:visited 		{margin: 0px 5px 0px 0px; BORDER-RIGHT: #036 1px solid; BORDER-TOP: #036 1px solid; 	BORDER-LEFT: #036 1px solid; 	CURSOR: default; 	COLOR:white; 	BORDER-BOTTOM: #036 1px solid; 	BACKGROUND-COLOR:#036; 	font:0.9em bold Arial, Helvetica, sans-serif; font-weight: bold; text-transform:uppercase; height:20px;}
+#cabecera #menu_contextual #formulario_google INPUT.boton:active 		{margin: 0px 5px 0px 0px; BORDER-RIGHT: #036 1px solid; BORDER-TOP: #036 1px solid; 	BORDER-LEFT: #036 1px solid; 	CURSOR: default; 	COLOR:white; 	BORDER-BOTTOM: #036 1px solid; 	BACKGROUND-COLOR:#036; 	font:0.9em bold Arial, Helvetica, sans-serif; font-weight: bold; text-transform:uppercase; height:20px;}
+#cabecera #menu_contextual #formulario_google INPUT.boton:focus 		{margin: 0px 5px 0px 0px; BORDER-RIGHT: #036 1px solid; BORDER-TOP: #036 1px solid; 	BORDER-LEFT: #036 1px solid; 	CURSOR: default; 	COLOR:white; 	BORDER-BOTTOM: #036 1px solid; 	BACKGROUND-COLOR:#036; 	font:0.9em bold Arial, Helvetica, sans-serif; font-weight: bold; text-transform:uppercase; height:20px;}
+
+/* ----- Logotipo del Gobierno de Canarias ----- */
+#cabecera h1					{margin:0; padding:0; text-indent:-5000px;}
+#cabecera h1 a 				{background:url(../img/logos/logo.gif) no-repeat;float:left;height:79px;width:150px ;text-decoration:none;}
+/* ----- Logotipo de agencias e institutos ----- */
+#cabecera h1.acecau a 		{background:url(../img/logos/logo_acecau.gif) no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.aciisi a 		{background:url(../img/logos/logo_aciisi.jpg) no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.accc a 			{background:url(../img/logos/logo_accc.jpg) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.acrpat a 		{background:url(../img/logos/logo_acrpat.gif) no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.ces a 			{background:url(../img/logos/logo_ces.gif) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.icap a 			{background:url(../img/logos/logo_icap.jpg) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.icca a 			{background:url(../img/logos/logo_icca.jpg) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.ichh a 			{background:url(../img/logos/logo_ichh.jpg) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.icia a 			{background:url(../img/logos/logo_icia.jpg) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.icm a 			{background:url(../img/logos/logo_icm.jpg) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.icv a 			{background:url(../img/logos/logo_icv.jpg) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.pc a 			{background:url(../img/logos/logo_pc.jpg) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.sce a 			{background:url(../img/logos/logo_sce.jpg) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.acs a 			{background:url(../img/logos/logo_acs.jpg) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.apmun a 			{background:url(../img/logos/logo_apmun.gif) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.eprtvc a 		{background:url(../img/logos/logo_eprtvc.gif) no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.esssc a 			{background:url(../img/logos/logo_esssc.jpg) 	no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+#cabecera h1.ice a 			{background:url(../img/logos/logo_ice.gif) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+
+#cabecera h1.atc-color a 	{background:url(../img/logos/logo_atc_color.jpg) 		no-repeat;float:left;height:79px;text-decoration:none;width:345px;}
+
+/* ----- Servicio Canario de Salud ----- */
+#cabecera h1.scs a 			{background:url(../img/logos/logo_scs.gif) 		no-repeat;float:left;height:79px;text-decoration:none;width:150px;}
+
+/*------- Logo sin Claim-----------------*/
+#cabecera h1.logoInterno a 			{background:url(../img/logos/logo_patro_col_der.gif) 		no-repeat;float:left;height:79px;text-decoration:none;width:150px;}
+
+/* ----- Logotipo de las consejerías ----- */
+#cabecera h2.cons a       		{background:url(../img/logos/cpj.gif) no-repeat;float:left;height:79px;text-decoration:none;width:154px;}
+		                      	
+#cabecera h2.cons-cagpa 		{margin:0; padding:0; text-indent:-5000px;} /* Agricultura, Ganadería, Pesca y Alimentación */
+#cabecera h2.cons-cagpa a 	{background:url(../img/logos/capa.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-cbsjv 		{margin:0; padding:0; text-indent:-5000px;} /* Bienestar Social, Juventud y Vivienda */
+#cabecera h2.cons-cbsjv a 	{background:url(../img/logos/cbsjv.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-ceh 		{margin:0; padding:0; text-indent:-5000px;} /* Economía y Hacienda */                                                                      
+#cabecera h2.cons-ceh a 		{background:url(../img/logos/ceh.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-ceucd 		{margin:0; padding:0; text-indent:-5000px;} /* Educación, Universidades, Cultura y Deportes */
+#cabecera h2.cons-ceucd a 	{background:url(../img/logos/ceucd.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-ceic 		{margin:0; padding:0; text-indent:-5000px;} /* Empleo, Industria y Comercio */                                                                
+#cabecera h2.cons-ceic a 		{background:url(../img/logos/ceic.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-cmaot 		{margin:0; padding:0; text-indent:-5000px;} /* Medio Ambiente y Ordenación Territorial */                                                      
+#cabecera h2.cons-cmaot a 	{background:url(../img/logos/cmaot.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-copt 		{margin:0; padding:0; text-indent:-5000px;} /* Obras Públicas y Transportes */                                                                
+#cabecera h2.cons-copt a 		{background:url(../img/logos/copt.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-cpjs 		{margin:0; padding:0; text-indent:-5000px;} /* Presidencia, Justicia y Seguridad */
+#cabecera h2.cons-cpjs a 		{background:url(../img/logos/cpj.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-cs 		{margin:0; padding:0; text-indent:-5000px;} /* Sanidad */                                                                                 
+#cabecera h2.cons-cs a 		{background:url(../img/logos/cs.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+                          	
+#cabecera h2.cons-ct 		{margin:0; padding:0; text-indent:-5000px;} /* Turismo */                                                                                 
+#cabecera h2.cons-ct a 		{background:url(../img/logos/ct.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+
+#cabecera h2.gob-submarca	{margin:0; padding:0; text-indent:-5000px;} /* Turismo */                                                                                 
+#cabecera h2.gob-submarca a	{background:url(../img/logos/logo_submarca.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+
+#cabecera h2.pres-gob		{margin:0; padding:0; text-indent:-5000px;} /* Presidencia del Gobierno */                                                                                 
+#cabecera h2.pres-gob a		{background:url(../img/logos/pg.gif) no-repeat;float:left;height:79px;text-decoration:none;width:199px;}
+/******************************************************** CABECERA *****************************************************************************************/
+
+/*********************************************************** FOTO CABECERA *********************************************************************************/
+#anuncio					{float:left; width:762px; height:92px;margin-top:1px}
+#anuncio .oculto				{position:absolute; left:-999px; width:990px;}
+/************************************************************ FIN FOTO CABECERA ****************************************************************************/
+
+/********************************************************* MIGAS *******************************************************************************************/
+#migas 						{background:url(../img/maqueta/borde_bajo_migas.gif) repeat-x left bottom;float:left;margin:0px;padding:0px 0px 7px;width:100%;}
+#migas p.txt 		 		{background:url(../img/auxis/flecha_amarilla.gif) no-repeat left 4px;color:#0058b0;float:left;font-size:1em;margin:0px; padding:9px 5px 0px 17px;}
+#migas ul 			 		{float:left; list-style-type:none; margin:0px; padding:9px 0px 0px 0px;}
+#migas ul li 			 		{color:#000000; display:inline; font-size:1em; margin-left:5px;}
+#migas ul li strong	 			{color:#000;}
+#migas ul li a 			 		{color:#535353;padding-right:5px;text-decoration:none;}
+#migas ul li a:hover 			{text-decoration:underline;}
+/******************************************************* FIN MIGAS *****************************************************************************************/
+
+/*********************************************************** PIE  *********************************************************************************************/
+#pie 						{background-color:#ffdf61; float:left; height:23px; margin:10px 0 0; width:100%;}
+#pie .izda 					{color:#000;float:left;font-size:0.8em;margin:0;padding:6px 0 0 16px;width:40%;}
+#pie .dcha 					{float:right; text-align:right; width:50%;}
+#pie .dcha ul 				{list-style-type:none; margin:0; padding:6px 0 0;}
+#pie .dcha ul li 				{display:inline;font-size:0.8em;padding:0 5px 0 0;}
+#pie .dcha ul li a 				{color:#000; text-decoration:none;  margin-right:7px;}
+#pie .dcha ul li a:hover		{text-decoration:underline;}
+#pie .dcha ul li.nobarra3 		{background:none transparent scroll repeat 0 0;}
+/********************************************************** FIN PIE  ******************************************************************************************/
+
+/********************************************************** LINEA DE PUNTOS ***********************************************************************************/
+#puntos 						{background:url(../img/maqueta/borde_bajo_migas.gif) repeat-x left bottom;float:left;margin:0px 0px 5px 0px;padding:0px;width:100%;}
+/********************************************************** LINEA DE PUNTOS ***********************************************************************************/
+
+/************************************************** FECHA DE ACTUALIZACIÓN  ***********************************************************************************/
+#fechaactual				{clear:both;width:100%;}
+#fechaactual .izdaBandera 	{float:left; text-align:left; margin-top:5px; font-size:0.8em; color:#535353; width:50%;}
+#fechaactual .dchaFecha		{float:left; text-align:right; margin-top:36px; font-size:0.8em; color:#535353; width:50%;}
+#fechaactual .dchaFecha_60 {float:left; text-align:right; margin-top:60px; font-size:0.8em; color:#535353; width:50%;}
+#fechaactual .dcha 			{float:left;text-align:right; margin-top:5px; font-size:0.8em; color:#535353; width:100%;}
+/************************************************ FIN FECHA DE ACTUALIZACIÓN  *********************************************************************************/
+
+#aviso-cookies {height:auto; width:100%; top:0px; background-color:#AAA; color:white; padding:1px; text-align: center; font-family: Arial,Helvetica,sans-serif; font-size: 1.1em; line-height: 1.428571429;}
+#aviso-cookies h2 {font-size: 30px; font-weight: 500; line-height: 1.1; margin-top: 20px; margin-bottom: 10px;}
+#aviso-cookies p {margin: 0 0 10px;}
+#aviso-cookies a {color:white}
+#aviso-cookies button {margin-bottom:5px; color: #036; display: inline-block; font-weight: 400; vertical-align: middle; font-size: 14px; border-radius: 4px; padding: 6px 12px; border: 1px solid transparent;}
+
+.pulsante {
+  /* name duration timing-function delay iteration-count direction */
+  animation: pulso 1s linear 0s 4 forwards;
+  -moz-animation: pulso 1s linear 0s 4 forwards; /* Firefox */
+  -webkit-animation: pulso 1s linear 0s 4 forwards; /* Safari and Chrome */
+  -o-animation: pulso 1s linear 0s 4 forwards; /* Opera */
+}
+@keyframes pulso {
+  0% { background-color: #ffffff; }
+  25% { background-color: #f2f2f2; }
+  50% { background-color: #e6e6e6; }
+  75% { background-color: #d9d9d9; }
+  100% { background-color: #D3D3D3; }
+}
+.start-now, .start-now:after {
+   animation-delay: 0;
+	-moz-animation-delay: 0;
+	-webkit-animation-delay: 0;
+	-o-animation-delay: 0;
+	animation-delay: 0;
+}

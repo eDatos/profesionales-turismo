@@ -1,0 +1,132 @@
+/**
+* ESTILOS PARA EL FORMULARIO DE EXPECTATIVAS
+*/
+#bloq_interior {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: black;
+}
+/** ESTILOS DE CABECERA DE FORMULARIO **/
+.istac { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: black;
+}
+/*table, tr, td, th {
+	border : 1px solid white;
+}
+*/
+.color_fondo_oscuro {
+	background-color: white;
+}
+.color_fondo_claro {
+	background-color: white;
+}
+hr {
+	width:100%;
+	height: 1px;
+	color: #ffeb99;
+	background-color: black;
+	border : 0px;
+}
+/*.istac {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: black;
+}*/
+.cabtabla {
+	border: 0px;
+	width: 100%;
+	border-spacing: 0px;
+	padding: 0px;
+	text-align: center;
+	font-size:16px;
+}
+.center {
+	margin: auto;
+	width: 100%;
+	line-height: normal;
+}
+.center input {
+	border-spacing: 2px;
+	border-color: gray;
+	font-size: 17px;
+}
+.istacnotas {
+	font-family: Arial, Helvetica, Geneva;
+	font-size: 7pt;
+	color: #D61;
+}
+/** ESTILOS DE CUERPO DE FORMULARIO **/
+.encuesta_bloque { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: black;
+	border: 0px;
+}
+.encuesta_bloque td { 
+	border: 0px;
+}
+.encuesta_bloque_id {
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	display: initial;
+	padding: 2px 5px;
+}
+.encuesta_bloque_titulo {
+	display: inline-block;
+}
+.encuesta_bloque_comentario {
+	font-size: 15px;
+}
+.encuesta_pregunta_titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: black;
+	margin: 9px 0px 10px 0px; 
+}
+.encuesta_pregunta_opciones {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.istactable {
+	width:100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: black;
+	font-weight: normal;
+	text-align: center;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+.istacfirstcol {
+	background-color: white;
+	text-align: left;
+	width: 30%;
+	padding-left: 5px;
+}
+.istactable tr, .istactable th, .istactable td {
+	border: 1px solid #CCCCCC;
+	vertical-align: middle;
+}
+.istactable td:not(.istacfirstcol) {
+	padding : 5px;
+	border-spacing:1;
+}
+.istactable th {
+	padding : 5px;
+	font-weight: normal;
+	background-color: white;	
+}
+.istactable tr:nth-child(2n+1) {
+	background-color: white;
+}
+.istactable tr:nth-child(2n) {
+	background-color: white;
+}

@@ -1,0 +1,480 @@
+# 	Los tipo de pregunta definidos por ahora son:
+#	
+#		Tipo 1=> radiobutton
+#		Tipo 2=> text
+#
+# 	Definir un nuevo tipo implica crear un nuevo caso en el fichero exp_crea_form_istac.php y la función que gestiona
+# este nuevo tipo de datos en la librería lib_formulario.class
+#
+#
+#
+#
+#		Se pueden definir variables de la siguiente forma:
+#		[NOMBRE_VARIABLE]		
+#		de forma que dicho valor se rellene posteriormente en el php que lee este fichero. Esto se utiliza por ejemplo para cambiar 
+#		[PRESENTE_TRIMESTRE] por el valor actual de dicho trimestre por ejemplo "primer trimestre de 2004" o el que sea.
+#
+#
+#  	Definición de una pregunta con un radio_button (tipo 1)
+#
+#
+#[PREGUNTA] #inicio de una pregunta.
+#	[TIPO] 1 [FIN_TIPO]
+#	[TITULO] TÍTULO DE LA PREGUNTA [FIN_TITULO] #Título de la pregunta.
+#	[COMENTARIO] Aqui se pone una explicación de la pregunta: [FIN_COMENTARIO] #Comentario que explica la pregunta.
+#	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+#	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+#	[TEXTOS_VALORES] Respuesta 1,Respuesta 2,Respuesta 3 [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+#	[PRESELECCIONADOS] 3 [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+#	[N_OPCIONES] 1 [FIN_N_OPCIONES]	#Nº de sub_apartados dentro de esta pregunta.
+#	[TEXTOS_OPCIONES] Texto que aparece al lado del radio_button [FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+#[FIN_PREGUNTA] #Fin de la pregunta.
+#
+#
+#
+#	Definición de una pregunta con dos radio_button (tipo 1)
+#
+#[PREGUNTA] #inicio de una pregunta.
+#	[TIPO] 1 [FIN_TIPO]
+#	[TITULO] TÍTULO DE LA PREGUNTA [FIN_TITULO] #Título de la pregunta.
+#	[COMENTARIO] Aqui se pone una explicación de la pregunta: [FIN_COMENTARIO] #Comentario que explica la pregunta.
+#	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+#	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+#	[TEXTOS_VALORES] Respuesta 1,Respuesta 2,Respuesta 3 [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+#	[PRESELECCIONADOS] 3 [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+#	[N_OPCIONES] 2 [FIN_N_OPCIONES]	#Nº de sub_apartados dentro de esta pregunta.
+#	[OBLIGATORIAS]1,2[FIN_OBLIGATORIAS] #preguntas que son obligatorias de responder
+#	[TEXTOS_OPCIONES] 
+#			Texto que aparece al lado del radio_button 1,
+#			Texto que aparece al lado del radio_button 2
+#	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+#[FIN_PREGUNTA] #Fin de la pregunta.
+#
+#
+#
+#
+#
+#	Definición de una pregunta con dos text (tipo 2)
+#
+#
+#
+#[PREGUNTA] 
+#	[TIPO] 2 [FIN_TIPO]
+#	[TITULO] TÍTULO [FIN_TITULO] 
+#	[VALORES] 1 [FIN_VALORES] 
+#	[N_VALORES] 1 [FIN_N_VALORES] 
+#	[COMENTARIO] Comentario: [FIN_COMENTARIO] 
+#	[TEXTOS_VALORES] 
+#		<input type='text' name='P9NUMEMP' class='istac2' size='4' maxlength='4'>
+#	[FIN_TEXTOS_VALORES] 
+#	[N_OPCIONES] 2 [FIN_N_OPCIONES]	
+#	[OBLIGATORIAS]1,2[FIN_OBLIGATORIAS]
+#	[TEXTOS_OPCIONES]
+#		Comentario del text 1:,    
+#		Comentario del text 2:
+#	[FIN_TEXTOS_OPCIONES] 
+#[FIN_PREGUNTA] 
+
+[BLOQUE]
+	[IDENTIFICADOR]A[FIN_IDENTIFICADOR]
+	[TITULO]MARCHA GENERAL DEL NEGOCIO	[FIN_TITULO] #Título del bloque.
+	[COMENTARIO] <b>Importante</b>: para las siguientes preguntas, responda, por favor, para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, [FIN_COMENTARIO] #Comentario que explica el bloque.
+[FIN_BLOQUE]
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 3 [FIN_TIPO]
+	[TITULO]<b>A.1</b> ¿Cómo valoraría la marcha del negocio en su establecimiento?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Favorable, 2=Normal, 3=Desfavorable[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Favorable,Normal,Desfavorable [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 2 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1,2[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		En el trimestre que está acabando,
+		Para el trimestre que va a comenzar
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		MARCHA_NEGOCIO_TACTUAL,
+		MARCHA_NEGOCIO_TSIGUIENTE
+	[FIN_NOMBRE_ORACLE]
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+#[PREGUNTA] #inicio de una pregunta.
+#	[TIPO] 5 [FIN_TIPO]
+#	[TITULO]<b>A.2</b> En el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_AÑO])</b>, ¿qué tendencia han seguido las siguientes variables en su establecimiento respecto a los trimestres indicados?	[FIN_TITULO] #Título de la pregunta.
+#	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+#	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso [FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+#	[N_CABECERAS] 2 [FIN_N_CABECERAS]
+#	[TEXTOS_CABECERAS] Respecto al trimestre anterior ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO]),Respecto al mismo trimestre del año anterior ([RECOGIDA_TRES_MESES_AÑO_ANTERIOR])[FIN_TEXTOS_CABECERAS]
+#	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+#	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+#	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+#	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+#	[N_OPCIONES] 4 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+#	[OBLIGATORIAS]1,2,3,4[FIN_OBLIGATORIAS]
+#	[TEXTOS_OPCIONES] 
+#		Facturación (volumen de negocio),
+#		Empleo (personal contratado),
+#		Inversión,
+#		Nivel de precios
+#	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+#	[NOMBRE_ORACLE]
+#		FACTURACION_TANTERIOR,
+#		FACTURACION_TAN_ANYOANTERIOR,
+#		EMPLEO_TANTERIOR,
+#		EMPLEO_TAN_ANYOANTERIOR,
+#		INVERSION_TANTERIOR,
+#		INVERSION_TAN_ANYOANTERIOR,
+#		NIVEL_PRECIOS_TANTERIOR,
+#		NIVEL_PRECIOS_TAN_ANYOANTERIOR
+#	[FIN_NOMBRE_ORACLE]	
+#[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 5 [FIN_TIPO]
+	[TITULO]<b>A.2.1</b> En el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, ¿qué tendencia han seguido las siguientes variables en su establecimiento
+respecto a los trimestres indicados?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso [FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[TEXTOS_CABECERAS] Respecto al trimestre anterior ([RECOGIDA_TRES_MESES_ANTERIOR_ANTERIOR_AÑO])[FIN_TEXTOS_CABECERAS]
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 4 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1,2,3,4[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		Facturación (volumen de negocio),
+		Empleo (personal contratado),
+		Inversión,
+		Nivel de precios
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		FACTURACION_TANTERIOR,
+		EMPLEO_TANTERIOR,
+		INVERSION_TANTERIOR,
+		NIVEL_PRECIOS_TANTERIOR
+	[FIN_NOMBRE_ORACLE]	
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 5 [FIN_TIPO]
+	[TITULO]<b>A.2.2</b> En el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, ¿qué tendencia han seguido las siguientes variables en su establecimiento
+respecto a los trimestres indicados?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso [FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[TEXTOS_CABECERAS] Respecto al mismo trimestre del año anterior ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO_ANTERIOR])[FIN_TEXTOS_CABECERAS]
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 4 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1,2,3,4[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		Facturación (volumen de negocio),
+		Empleo (personal contratado),
+		Inversión,
+		Nivel de precios
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		FACTURACION_TAN_ANYOANTERIOR,
+		EMPLEO_TAN_ANYOANTERIOR,
+		INVERSION_TAN_ANYOANTERIOR,
+		NIVEL_PRECIOS_TAN_ANYOANTERIOR
+	[FIN_NOMBRE_ORACLE]	
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+#[PREGUNTA] #inicio de una pregunta.
+#	[TIPO] 5 [FIN_TIPO]
+#	[TITULO]<b>A.3</b> Para el próximo <b>trimestre ([PROXIMOS_TRES_MESES_AÑO])</b>, ¿qué tendencia cree que seguirán las siguientes variables en su establecimiento respecto a los trimestres indicados?	[FIN_TITULO] #Título de la pregunta.
+#	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+#	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+#	[N_CABECERAS] 2 [FIN_N_CABECERAS]
+#	[TEXTOS_CABECERAS] Respecto al trimestre anterior ([RECOGIDA_TRES_MESES_AÑO]),Respecto al mismo trimestre del año anterior ([PROXIMOS_TRES_MESES_AÑO_ANTERIOR])[FIN_TEXTOS_CABECERAS]
+#	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+#	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+#	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+#	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+#	[N_OPCIONES] 4 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+#	[OBLIGATORIAS]1,2,3,4[FIN_OBLIGATORIAS]
+#	[TEXTOS_OPCIONES] 
+#		Facturación (volumen de negocio),
+#		Empleo (personal contratado),
+#		Inversión,
+#		Nivel de precios
+#	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+#	[NOMBRE_ORACLE]
+#		FACTURACION_TACTUAL,
+#		FACTURACION_TAC_ANYOANTERIOR,
+#		EMPLEO_TACTUAL,
+#		EMPLEO_TAC_ANYOANTERIOR,
+#		INVERSION_TACTUAL,
+#		INVERSION_TAC_ANYOANTERIOR,
+#		NIVEL_PRECIOS_TACTUAL,
+#		NIVEL_PRECIOS_TAC_ANYOANTERIOR
+#	[FIN_NOMBRE_ORACLE]		
+#[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 5 [FIN_TIPO]
+	[TITULO]<b>A.3.1</b> Para el próximo <b>trimestre ([PROXIMOS_TRES_MESES_AÑO])</b>, ¿qué tendencia cree que seguirán las siguientes variables en su establecimiento respecto
+a los trimestres indicados?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[TEXTOS_CABECERAS] Respecto al trimestre anterior ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])[FIN_TEXTOS_CABECERAS]
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 4 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1,2,3,4[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		Facturación (volumen de negocio),
+		Empleo (personal contratado),
+		Inversión,
+		Nivel de precios
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		FACTURACION_TACTUAL,
+		EMPLEO_TACTUAL,
+		INVERSION_TACTUAL,
+		NIVEL_PRECIOS_TACTUAL
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 5 [FIN_TIPO]
+	[TITULO]<b>A.3.2</b> Para el próximo <b>trimestre ([PROXIMOS_TRES_MESES_AÑO])</b>, ¿qué tendencia cree que seguirán las siguientes variables en su establecimiento respecto
+a los trimestres indicados?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[TEXTOS_CABECERAS] Respecto al mismo trimestre del año anterior ([PROXIMOS_TRES_MESES_AÑO_ANTERIOR])[FIN_TEXTOS_CABECERAS]
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 4 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1,2,3,4[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		Facturación (volumen de negocio),
+		Empleo (personal contratado),
+		Inversión,
+		Nivel de precios
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		FACTURACION_TAC_ANYOANTERIOR,
+		EMPLEO_TAC_ANYOANTERIOR,
+		INVERSION_TAC_ANYOANTERIOR,
+		NIVEL_PRECIOS_TAC_ANYOANTERIOR
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[BLOQUE]
+	[IDENTIFICADOR]B [FIN_IDENTIFICADOR]
+	[TITULO]FACTORES QUE INFLUYEN EN EL NEGOCIO	[FIN_TITULO] #Título del bloque.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica el bloque.
+[FIN_BLOQUE]
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 6 [FIN_TIPO]
+	[TITULO]<b>B.1</b> Para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, ¿qué factores cree Vd. que limitan la actividad
+de su establecimiento o la marcha de su negocio?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] (Señale todas las opciones que considere más relevantes) [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Sí, 6=No [FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 1 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 6 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS][FIN_OBLIGATORIAS]
+	[POR_DEFECTO_VALOR]6[FIN_POR_DEFECTO_VALOR]
+	[TEXTOS_OPCIONES] 
+		Debilidad de la demanda,
+		Escasez de mano de obra adecuada,
+		Insuficiencia de equipamiento,
+		Dificultades financieras,
+		Aumento de la competencia,
+		Otras causas
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		DEBILIDAD_DEMANDA,
+		ESCASEZ_MANO_OBRA_ADECUADA,
+		INSUFICIENCIA_EQUIPAMIENTO,
+		DIFICULTADES_FINANCIERAS,
+		AUMENTO_COMPETENCIA,
+		OTRAS_CAUSAS
+	[FIN_NOMBRE_ORACLE]			
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 1 [FIN_TIPO]
+	[TITULO]<b>B.2</b> Para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, valore los efectos
+de las políticas aplicadas por las Administraciones
+Públicas, sobre la marcha de su establecimiento.	[FIN_TITULO] #Título de la pregunta.
+#	[COMENTARIO] Elija en una escala de 01 a 05 el nivel de influencia, donde <b>01 = Muy desfavorable, 02 = Desfavorable, 03 = No influye, 04 = Favorable y 05 = Muy favorable.</b> [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO]  [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Muy desfavorable, 2=Desfavorable, 3=No influye, 4=Favorable, 5=Muy favorable[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 5 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3,4,5 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Muy desfavorable, Desfavorable, No influye, Favorable, Muy favorable [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 10 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS][FIN_OBLIGATORIAS]
+	[POR_DEFECTO_VALOR]-9[FIN_POR_DEFECTO_VALOR]
+	[TEXTOS_OPCIONES] 
+		Promoción turística,
+		Infraestructuras,
+		Apoyo a la oferta complementaria,
+		Protección ambiental,
+		Limpieza y cuidado del entorno,
+		Seguridad,
+		Fiscalidad,
+		Formación,
+		Normativa del sector alojativo,
+		Ordenación urbanística
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		PROMOCION_TURISTICA,
+		INFRAESTRUCTURAS,
+		APOYO_OFERTA_COMPLEMENTARIA,
+		PROTECCION_AMBIENTAL,
+		LIMPIEZA_CUIDADO_ENTORNO,
+		SEGURIDAD,
+		FISCALIDAD,
+		FORMACION,
+		NORMATIVA_SECTOR_ALOJATIVO,
+		ORDENACION_URBANISTICA
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 1 [FIN_TIPO]
+	[TITULO]<b>B.3</b> Para el <b>trimestre que está acabando ([RECOGIDA_TRES_MESES_ANTERIOR_AÑO])</b>, valore los efectos
+sobre la marcha de su establecimiento de los siguientes
+factores externos.	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Muy desfavorable, 2=Desfavorable, 3=No influye, 4=Favorable, 5=Muy favorable [FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 5 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3,4,5 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Muy desfavorable, Desfavorable, No influye, Favorable, Muy favorable [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 10 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS][FIN_OBLIGATORIAS]
+	[POR_DEFECTO_VALOR]-9[FIN_POR_DEFECTO_VALOR]
+	[TEXTOS_OPCIONES] 
+		Crisis económica,
+		Conflictos internacionales,
+		Competencia de otros destinos,
+		Política de touroperadores,
+		Precios transporte aéreo y marítimo,
+		Reducción estancia media,
+		Oferta complementaria,
+		Factores climatológicos,
+		Situación social,
+		Percepción social del turismo
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		CRISIS_ECONOMICA,
+		CONFLICTOS_INTERNACIONALES,
+		COMPETENCIA_OTROS_DESTINOS,
+		POLITICA_TOUROPERADORES,
+		PRECIOS_TRANSPORTE_AEREO_MAR,
+		REDUCCION_ESTANCIA_MEDIA,
+		OFERTA_COMPLEMENTARIA,
+		FACTORES_CLIMATOLOGICOS,
+		SITUACION_SOCIAL,
+		PERCEPCION_SOCIAL_TURISMO
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[BLOQUE]
+	[IDENTIFICADOR]C [FIN_IDENTIFICADOR]
+	[TITULO]EXPECTATIVAS SOBRE EL GRADO DE OCUPACIÓN	[FIN_TITULO] #Título del bloque.
+	[COMENTARIO]  [FIN_COMENTARIO] #Comentario que explica el bloque.
+[FIN_BLOQUE]
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 3 [FIN_TIPO]
+	[TITULO]<b>C.1</b> Para el <b>trimestre que va a comenzar ([PROXIMOS_TRES_MESES_AÑO])</b>, en relación al
+mismo trimestre del año anterior, ¿cuál es la tendencia
+prevista en el grado de ocupación en su establecimiento?	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO]  [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Aumento,
+		Estabilidad,
+		Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 1 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		TENDENCIA_GRADO_OCUPACION
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] #Fin de la pregunta.
+
+[PREGUNTA] 
+	[TIPO] 3 [FIN_TIPO]
+	[TITULO]<b>C.2</b> Para el <b>trimestre que va a comenzar ([PROXIMOS_TRES_MESES_AÑO])</b>, el grado de ocupación
+previsto para cada mes es: [FIN_TITULO] 
+	[COMENTARIO]   [FIN_COMENTARIO] 
+	[COMENTARIO_GRABADOR] 1=del 90% al 100%, 2=del 75% al 89%, 3=del 50% al 74%, 4=del 25% al 49%, 5=del 10% al 24%, 6=del 0% al 9%, 7=No disponemos de previsiones[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 7 [FIN_N_VALORES] 
+	[VALORES] 1,2,3,4,5,6,7 [FIN_VALORES] 
+	[TEXTOS_VALORES] 
+		del 90% al 100%,
+		del 75% al 89%,
+		del 50% al 74%,
+		del 25% al 49%,
+		del 10% al 24%,
+		del 0% al 9%,
+		No disponemos de previsiones  
+	[FIN_TEXTOS_VALORES] 
+	[PRESELECCIONADOS] [FIN_PRESELECCIONADOS]    
+	[N_OPCIONES] 3 [FIN_N_OPCIONES]	
+	[OBLIGATORIAS]1,2,3[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES]1º mes ([PRIMER_MES]) ,2º mes ([SEGUNDO_MES]) ,3º mes ([TERCER_MES])
+	[FIN_TEXTOS_OPCIONES] 
+	[NOMBRE_ORACLE]
+		PREVISION_OCUPACION_MES1,
+		PREVISION_OCUPACION_MES2,
+		PREVISION_OCUPACION_MES3
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] 
+
+[PREGUNTA] #inicio de una pregunta.
+	[TIPO] 3 [FIN_TIPO]
+	[TITULO]<b>C.3</b> Para el <b>trimestre que va a comenzar ([PROXIMOS_TRES_MESES_AÑO])</b>, en relación al
+mismo trimestre del año anterior, la evolución de los alojados
+por nacionalidades esperamos que sea de:	[FIN_TITULO] #Título de la pregunta.
+	[COMENTARIO] [FIN_COMENTARIO] #Comentario que explica la pregunta.
+	[COMENTARIO_GRABADOR] 1=Aumento, 2=Estabilidad, 3=Descenso[FIN_COMENTARIO_GRABADOR] #Comentario para el grabador.
+	[N_VALORES] 3 [FIN_N_VALORES] #Nº de respuestas posibles a esta pregunta.
+	[VALORES] 1,2,3 [FIN_VALORES] #Valores que se devolverán según la respuesta elegida.
+	[TEXTOS_VALORES] Aumento,Estabilidad,Descenso [FIN_TEXTOS_VALORES] #Texto de las diferentes respuestas entre las que puede elegir el usuario.
+	[PRESELECCIONADOS] 1[FIN_PRESELECCIONADOS]    #aquí se ponen los valores a los que queremos inicializar los radio butons, si lo dejamos en blanco aparecen sin inicializar.
+	[N_OPCIONES] 6 [FIN_N_OPCIONES]	#Nº de apartados dentro de esta pregunta.
+	[OBLIGATORIAS]1,2,3,4,5,6[FIN_OBLIGATORIAS]
+	[TEXTOS_OPCIONES] 
+		Alemanes,
+		Ingleses,
+		Españoles,
+		Nórdicos,
+		Resto de Europa,
+		Resto del Mundo
+	[FIN_TEXTOS_OPCIONES] #Texto que aparece al principio de cada apartado.
+	[NOMBRE_ORACLE]
+		EVOLUC_OCUPACION_ALEMANES,
+		EVOLUC_OCUPACION_INGLESES,
+		EVOLUC_OCUPACION_ESPANYOLES,
+		EVOLUC_OCUPACION_NORDICOS,
+		EVOLUC_OCUPACION_RESTO_EUROPA,
+		EVOLUC_OCUPACION_RESTO_MUNDO
+	[FIN_NOMBRE_ORACLE]		
+[FIN_PREGUNTA] #Fin de la pregunta.

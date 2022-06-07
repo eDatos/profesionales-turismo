@@ -1,0 +1,280 @@
+html 						{width:98%;}
+
+/* area impresion */
+body 					{background-color:#fff;text-align:left;color:#000 !important;border:0;margin:0;padding:0; font:10pt Georgia, "Times New Roman", Times, serif;width:7in;}
+body:after 				{content:"(c) Gobierno de Canarias.";color:#ccc;background-color:#fff;float:left;}
+
+/* encabezados */
+h1, h2, h3, h4, h5, h6 	{font-weight:bold; margin-top:1em; margin-bottom:2pt; letter-spacing:1pt;}
+h4, h5, h6 				{font-weight:normal;}
+h1 						{font-size:16pt;}
+h2 						{font-size:14pt;}
+h3 						{font-size:12pt;}
+h4 						{font-size:11pt;}
+h5 						{font-size:10pt;}
+
+/* negrita */
+b, strong, em 			{font-weight:bold;}
+
+/* enlaces */
+a:link, a:visited 		{color:#333; background-color:#fff; text-decoration:none;}
+
+/* imagenes */
+img 						{border:0;}
+
+/* parrafos */
+p 						{text-align:justify; line-height:150%;}
+
+/* listas */
+ul 						{margin:0 0 0 1.5em; padding:0;}
+ul li, ol li 					{list-style-type:square; line-height:160%;}
+
+/* tablas */
+table						{margin:0 auto; width:95%; font-family:Georgia, "Times New Roman", Times, serif;}
+table caption 				{font-size:large; text-align:center;}
+table thead tr th 			{border:0px solid #000; font-weight:bold; text-align:center;}
+table tbody tr td 			{border:0px solid #ccc;}
+
+/* alineacion */
+.centra 					{text-align:center;}
+.alider 					{text-align:right;}
+.alerta 					{text-transform:uppercase; font-weight:bold;}
+
+/* desaparecen */
+#listado_superior, #foto_cabecera, .menu, #formbusca, #migas, .bloq_izd, #pie, .noprint {display:none;}
+#cabecera, #fechaactual, .columna_pequ, .btn_busc {display: none;}
+
+/********************************************************************/
+/* ESTILOS PARA LOS ERRORES Y AVISOS                                */
+/********************************************************************/
+.magnified_print {
+	font: 125% Arial, Helvetica, sans-serif;
+}
+
+/********************************************************************/
+/* ESTILOS PARA EL FORMULARIO DE ALOJAMIENTO EN MODO IMPRESION      */
+/* NOTA: Las clases aquí deben tener su contrapartida en cuerpo.css */
+/********************************************************************/
+.tabla_esp_mes_dia {
+	border-spacing: 0px;
+	border-collapse: separate;
+	background-color:#f2f2f2;
+}
+.tabla_esp_mes_dia td {
+	padding: 0px;
+}
+.tabla_esp {
+	border-spacing: 0px;
+	border-collapse: separate;
+}
+.tabla_esp td {
+	padding: 0px;
+}
+.tabla_esp_fila {
+	height:25px;
+	vertical-align:middle;
+	border-bottom: solid 1px #f0f0f0;
+	background-color:#fbfbfb;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_esp_fila_tot {
+	height:26px;
+	vertical-align:middle;
+	border: solid 1px black;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_esp_celda_tot {
+	border-bottom: solid 1px #e0e0e0;
+	text-align:center;
+	background-color:#f2f2f2;
+}
+.tabla_esp_celda_tot_54 {
+	width:54px;
+	border-bottom: solid 1px #e0e0e0;
+	text-align:center;
+	background-color:#f2f2f2;
+}
+.tabla_esp_celda_tot_53 {
+	width:53px;
+	border-bottom: solid 1px #e0e0e0;
+	text-align:center;
+	background-color:#f2f2f2;
+}
+.tabla_esp_celda_53 {
+	width:53px;
+	text-align:center;
+	border-bottom: solid 1px #f0f0f0;
+}
+.tabla_esp_celda_54 {
+	width:54px;
+	text-align:center;
+	border-bottom: solid 1px #f0f0f0;
+}
+.tabla_esp_tot {
+	border-spacing: 0px;
+	border-collapse: separate;
+}
+.tabla_esp_tot td {
+	padding: 0px;
+}
+.tabla_esp_tot_fila {
+	height:25px;
+	vertical-align:middle;
+	border: solid 1px black;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_esp_tot_celda_53 {
+	width:53px;
+	border-bottom: solid 1px #e0e0e0;
+	background-color:#f2f2f2;
+	text-align:center;
+}
+.tabla_esp_tot_fila_tot {
+	height:26px;
+	vertical-align:middle;
+	border: solid 1px black;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_hab {
+	border-spacing: 0px;
+	border-collapse: separate;
+	background-color: #ffffff;
+}
+.tabla_hab_fila {
+	height:25px;
+	vertical-align:middle;
+	border-bottom: solid 1px #e0e0e0;
+	background-color:#fbfbfb;
+}
+.tabla_hab_fila_tot {
+	height:25px;
+	vertical-align:middle;
+	border-bottom: solid 1px #e0e0e0;
+	background-color:#f2f2f2;
+}
+.tabla_hab_fila_tot_celda_137 {
+	width:137px;
+	text-align: center;
+	background-color:#d4d4d4;
+}
+.tabla_hab_fila_tot_celda_162 {
+	width:162px;
+	text-align: center;
+	background-color:#f2f2f2;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_hab_fila_tot_celda_101 {
+	width:101px;
+	text-align: center;
+	background-color:#f2f2f2;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_hab_celda_162 {
+	width:162px;
+	text-align: center;
+	border-bottom: solid 1px #f0f0f0;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_hab_celda_101 {
+	width:101px;
+	text-align: center;
+	border-bottom: solid 1px #f0f0f0;
+	background-color:#f2f2f2;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_hab_celda_mes {
+	border-bottom: solid 1px #e0e0e0;
+	width:117px;
+	background-color:#f2f2f2;
+}
+.tabla_hab_celda_dia {
+	width:30px;
+	text-align:center;
+	border-bottom: solid 1px #e0e0e0;
+	background-color:#f2f2f2;
+}
+.tabla_esp_celda_mes_ant {
+	width:60px;
+	border-top: solid 1px #e0e0e0;
+}
+.tabla_esp_celda_dia_ant {
+	width:20px;
+	text-align:center;
+	border-top: solid 1px #e0e0e0;
+}
+.tabla_esp_celda_mes_enc {
+	width:60px;
+	border-bottom: solid 1px #e0e0e0;
+	border-top: solid 1px #e0e0e0;
+}
+.tabla_esp_celda_dia_enc {
+	width:20px;
+	text-align:center;
+	border-bottom: solid 1px #e0e0e0;
+	border-top: solid 1px #e0e0e0;
+}
+.tabla_esp_total {
+	width:80px;
+	border-bottom: solid 1px #e0e0e0;
+	background-color:#d4d4d4;
+}
+.tabla_esp_est_media {
+	width:80px;
+	border-bottom: solid 1px #e0e0e0;
+	background-color:#d4d4d4;
+}
+.precio_ingreso_mensual {
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.precio_tarifa_media {
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.precio_ADR_mensual {
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_precios {
+	width: 100%;
+	border-spacing: 0px;
+	border-collapse: separate;
+}
+.tabla_precios td {
+	padding: 0px;
+}
+.tabla_precios_celda_ADR {
+	width:60px;
+	text-align:center;
+	background-color:#fbfbfb;
+	border-top:solid 1px #e0e0e0;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_precios_celda_num_hab {
+	width:90px;
+	text-align:right;
+	background-color:#fbfbfb;
+	padding-right:8px;
+	border-top:solid 1px #e0e0e0;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_precios_celda_perc_hab {
+	width:90px;
+	text-align:right;
+	background-color:#fbfbfb;
+	padding-right:8px;
+	border-top:solid 1px #e0e0e0;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+.tabla_personal {
+	width:250px;
+	margin-left:12px;
+	margin-top:6px;
+}
+.tabla_personal_celda {
+	border:1px solid #E3ECF7;
+	text-align:right;
+	width:55px;
+	padding-right:3px;
+	font: 125% Arial, Helvetica, sans-serif;
+}
+
+/* print.css: ESTILO IMPRESION (W3C_CSS2) V.2.0.3.060307 */
+/* copyright IT7 (jquevedo@qweos.net). */

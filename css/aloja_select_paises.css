@@ -1,0 +1,101 @@
+@CHARSET "ISO-8859-1";
+
+table.paises {
+	margin-left: 20px;
+	background-color:#f2f2f2;
+	text-align:right;
+}
+table.paises th, table.paises td { 
+	padding: 0px; 
+	background-color: #fbfbfb;
+}
+table.paises { 
+	border-collapse:collapse; 
+	border-spacing: 0; 
+}
+table.paises th {
+	background-color:#f2f2f2;
+	padding: 5px;
+	border-left:solid 1px #caddf7;
+	width:100px;
+}
+table.paises th:first-child {
+	width:260px;
+	background-color:#ffffff;
+	border-left:solid 0px #caddf7;
+}
+table.paises th:last-child {
+	border-right:solid 1px #caddf7;
+}
+
+table.paises td.grupo_pais:first-child  {
+	background-color: #caddf7;
+	padding:5px 0px 4px 5px;
+	text-align:left;
+}
+
+table.paises .pais_cab {
+	padding:5px 5px 5px 20px;
+	background-color:#f2f2f2;
+	text-align:left;
+	border-top: solid 1px #e0e0e0;
+}
+table.paises tr.div_espana .pais_cab, table.paises tr.div_nohabituales .pais_cab {
+	padding-left: 35px;
+}
+table.paises td.primer_pais {
+	border-top: solid 0px;
+}
+table.paises td.marca-rojo {
+	background-color: red;
+}
+table.paises td.col-um {
+	text-align: center;
+}
+
+table.paises tr.div_espana td.grupo_pais:first-child, table.paises tr.div_nohabituales td.grupo_pais:first-child {
+	background-color: #DFEBFA;
+	padding:5px 0px 4px 5px;
+	text-align:left;
+	padding-left: 18px;
+}
+
+table.paises td {
+	padding: 5px;
+	border-top: solid 1px #f0f0f0;
+}
+table.paises td.grupo_pais {
+	background-color: #dfebfa;
+	border-bottom: solid 0px;
+	border-top: solid 0px;
+}
+table.paises tr.div_espana td.grupo_pais, table.paises tr.div_nohabituales td.grupo_pais {
+	background-color: #EDF3FA;
+}
+
+table.paises td.fila_vacia {
+	height: 20px;
+	border-right:solid 0px;
+	background-color:#ffffff;
+}
+
+div h2.cabecera_1er_nivel {
+	font-weight: normal;
+	margin-bottom:0px;
+}
+#subirXmlBtn {
+	width:170px; 
+	margin: 10px 0px 10px 0px;
+	background-image: url("../images/subir.gif");
+	background-repeat: no-repeat;
+	background-position: 8px 4px;
+}
+li.opcion {
+	list-style-type: none;
+}
+li.opcion:last-child {
+	margin-bottom: 40px;
+}
+.tabbed {
+	margin-left: 20px;
+}
