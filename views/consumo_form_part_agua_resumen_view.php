@@ -117,9 +117,9 @@ $(document).ready( function() {
 	<div style="padding: 4px;">
     <form method="post" action="<?= $urlNext ?>" id="formdata">
     	<fieldset>
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_IMPORTE ?>">Importe del consumo: </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_IMPORTE ?>">Importe del consumo (€): </label>
 	        <input type="text" class="numero condecimales" data-numdecimales="2" maxlength="9" title="Importe total de la factura antes de impuestos" name="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_IMPORTE ?>" id="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_IMPORTE ?>" value="<?= isset($TotalImporteFactura)?$TotalImporteFactura:'' ?>" _required="required">
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_PAGAR ?>">Total a pagar: </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_PAGAR ?>">Total a pagar (€): </label>
 	        <input type="text" class="numero condecimales" data-numdecimales="2" maxlength="9" title="Importe total de la factura a pagar" name="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_PAGAR ?>" id="<?= VAR_FACTURA_AGUA_RESUMEN_TOTAL_PAGAR ?>" value="<?= isset($TotalPagar)?$TotalPagar:'' ?>" _required="required">
     	</fieldset>
         <div class="botonera"><div class="botonAnterior"><input type="button" id="botonanterior" value="Anterior"></div>

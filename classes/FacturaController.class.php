@@ -130,9 +130,9 @@ class FacturaController
         return $this->dao->filtrarFacturas($argumentos);
     }
     
-    public function buscarFacturasRecientes($estid)
+    public function buscarFacturasRecientes($estid, $cerrada=true)
     {
-        return $this->dao->buscarFacturasRecientes($estid);
+        return $this->dao->buscarFacturasRecientes($estid, $cerrada);
     }
     
     public function borrarFactura(Factura $factura)

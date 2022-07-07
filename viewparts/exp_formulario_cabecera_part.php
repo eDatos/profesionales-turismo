@@ -169,16 +169,6 @@
 			</table>
 			
 			<table class="noprint" width="100%" height="100%" cellspacing="1" cellpadding="1" align="center">
-				<tr class="color_fondo_oscuro">
-					<td valign='top' width="10%">
-						<table height="100%" >							
-						<tr valign="botton">								
-						<!-- onclick="abrir_ventana('popup.php?pdf=documentos/cuestionario_expectativas_2012.pdf');"  -->
-								<td align="center">Versión en papel (<a href="<?= $page->build_url("pdfshow.php", array("src"=>CONTENT_EXPECTATIVAS_PDF)) ?>" target="_blank" class="pdficon enlace popup" title="Versión PDF del cuestionario de expectativas hoteleras">PDF 326 Kb</a>)</td>							
-						</tr>
-						</table>
-					</td>
-				</tr>
 				<tr>
 				<?php if ($page->have_any_perm(PERM_USER)): ?>
 					<td colspan='2'  class="color_fondo_claro istac" align="center" valign="middle" height='30'><a href='<?= $modDatosUrl ?>' title='Haciendo click en este enlace irá a modicar los datos de su establecimiento'>IR A MODIFICAR LOS DATOS DE SU ESTABLECIMIENTO</a></td>

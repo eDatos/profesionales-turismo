@@ -167,7 +167,7 @@ function VentanaErroresEnvio(titulo, errores, guard_ok)
 					var nuevaventana=window.open();
 					var base=window.location.href;
 					base=base.slice(0,base.lastIndexOf('/'));
-					var titulo='Encuesta sobre el Empleo en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: '+nombreMesEncuesta+' de '+ano_encuesta;
+					var titulo='Encuesta sobre el Empleo: '+nombreMesEncuesta+' de '+ano_encuesta;
 					var cabecera='<a href="http://www.gobiernodecanarias.org/istac/" target="_blank" title="Página principal del Instituto Canario de Estadística (ISTAC) - Opciones de accesibilidad (tecla de acceso: i)" accesskey="i"><img src="images/logo_istac.jpg" style="width:300px; margin-right:10px; margin-top:5px;"></a><h1>'+titulo+'</h1><h1>Informe de errores</h1><h3>Establecimiento: '+nombre_establecimiento+'</h3><h3>Fecha y hora de envío: '+timestamp+'</h3><br/>';
 					var html='<html><head><base href="'+base+'/" target="_blank"></head><body>'+cabecera+$(this).html()+'</body></html>';
 					$(nuevaventana.document.body).html(html);
@@ -291,7 +291,7 @@ function VentanaErrores(titulo,errores,guard_ok)
 					var nuevaventana=window.open();
 					var base=window.location.href;
 					base=base.slice(0,base.lastIndexOf('/'));
-					var titulo='Encuesta sobre el Empleo en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: '+nombreMesEncuesta+' de '+ano_encuesta;
+					var titulo='Encuesta sobre el Empleo: '+nombreMesEncuesta+' de '+ano_encuesta;
 					var cabecera='<a href="http://www.gobiernodecanarias.org/istac/" target="_blank" title="Página principal del Instituto Canario de Estadística (ISTAC) - Opciones de accesibilidad (tecla de acceso: i)" accesskey="i"><img src="images/logo_istac.jpg" style="width:300px; margin-right:10px; margin-top:5px;"></a><h1>'+titulo+'</h1><h1>Informe de errores</h1><h3>Establecimiento: '+nombre_establecimiento+'</h3><h3>Fecha y hora de envío: '+timestamp+'</h3><br/>';
 					var html='<html><head><base href="'+base+'/" target="_blank"></head><body>'+cabecera+$(this).html()+'</body></html>';
 					$(nuevaventana.document.body).html(html);
@@ -410,7 +410,7 @@ function VentanaErrores_2(titulo, errores, mostrarcat, guard_ok)
 					var nuevaventana=window.open();
 					var base=window.location.href;
 					base=base.slice(0,base.lastIndexOf('/'));
-					var titulo='Encuesta sobre el Empleo en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: '+nombreMesEncuesta+' de '+ano_encuesta;
+					var titulo='Encuesta sobre el Empleo: '+nombreMesEncuesta+' de '+ano_encuesta;
 					var cabecera='<a href="http://www.gobiernodecanarias.org/istac/" target="_blank" title="Página principal del Instituto Canario de Estadística (ISTAC) - Opciones de accesibilidad (tecla de acceso: i)" accesskey="i"><img src="images/logo_istac.jpg" style="width:300px; margin-right:10px; margin-top:5px;"></a><h1>'+titulo+'</h1><h1>Informe de errores</h1><h3>Establecimiento: '+nombre_establecimiento+'</h3><h3>Fecha y hora de envío: '+timestamp+'</h3><br/>';
 					var html='<html><head><base href="'+base+'/" target="_blank"></head><body>'+cabecera+$(this).html()+'</body></html>';
 					$(nuevaventana.document.body).html(html);
@@ -631,6 +631,11 @@ $(document).ready( function()
 	$("input[name='enviarBtn']").button().click(EnviarForm);
 	
 	$("input[name='guardarBtn']").button().click(function() {
+		if(soloLectura)
+		{
+			window.location.href=navSgteURL;
+			return;
+		}
 		GuardarForm(function() {
 			//busy(true);
 			

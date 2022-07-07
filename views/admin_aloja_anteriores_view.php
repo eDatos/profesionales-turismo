@@ -7,7 +7,7 @@ $(document).ready(function() {
 </script>
 <!-- COMIENZO BLOQUE INTERIOR -->
 <div id="bloq_interior">
-	<h1 class="titulo_1" style="float:left;">Encuesta de Alojamiento Turístico en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?></h1>	
+	<h1 class="titulo_1" style="float:left;">Encuesta de Alojamiento Turístico</h1>	
 	<a id="ayuda_aloja" href="javascript:MostrarAyuda('ayuda_aloja','AYUDA05<?= $es_hotel ? "_HOT" : "_APT" ?>');" class="ayudaicon enlace" style="float:right;margin-top:9px;background-position-y: 2px;" title="Ayuda (tecla de acceso: y)" accesskey="y"><strong>Ayuda</strong></a>	
 	<div style="clear:both;"></div>
 	<!-- COMIENZO COLUMNA DERECHA -->

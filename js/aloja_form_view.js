@@ -241,7 +241,7 @@ function VentanaErroresEnvio(titulo, errores, guard_ok)
 					var nuevaventana=window.open();
 					var base=window.location.href;
 					base=base.slice(0,base.lastIndexOf('/'));
-					var titulo='Encuesta de Alojamiento Turístico en Establecimientos Hoteleros: '+nombreMesEncuesta+' de '+ano_encuesta;
+					var titulo='Encuesta de Alojamiento Turístico: '+nombreMesEncuesta+' de '+ano_encuesta;
 					var cabecera='<a href="http://www.gobiernodecanarias.org/istac/" target="_blank" title="Página principal del Instituto Canario de Estadística (ISTAC) - Opciones de accesibilidad (tecla de acceso: i)" accesskey="i"><img src="images/logo_istac.jpg" style="width:300px; margin-right:10px; margin-top:5px;"></a><h1>'+titulo+'</h1><h1>Informe de errores</h1><h3>Establecimiento: '+nombre_establecimiento+'</h3><h3>Fecha y hora de envío: '+timestamp+'</h3><br/>';
 					var html='<html><head><base href="'+base+'/" target="_blank"></head><body>'+cabecera+$(this).html()+'</body></html>';
 					$(nuevaventana.document.body).html(html);
@@ -358,7 +358,7 @@ function VentanaErrores(titulo, errores, mostrarcat, guard_ok)
 					var nuevaventana=window.open();
 					var base=window.location.href;
 					base=base.slice(0,base.lastIndexOf('/'));
-					var titulo='Encuesta de Alojamiento Turístico en Establecimientos Hoteleros: '+nombreMesEncuesta+' de '+ano_encuesta;
+					var titulo='Encuesta de Alojamiento Turístico: '+nombreMesEncuesta+' de '+ano_encuesta;
 					var cabecera='<a href="http://www.gobiernodecanarias.org/istac/" target="_blank" title="Página principal del Instituto Canario de Estadística (ISTAC) - Opciones de accesibilidad (tecla de acceso: i)" accesskey="i"><img src="images/logo_istac.jpg" style="width:300px; margin-right:10px; margin-top:5px;"></a><h1>'+titulo+'</h1><h1>Informe de errores</h1><h3>Establecimiento: '+nombre_establecimiento+'</h3><h3>Fecha y hora de envío: '+timestamp+'</h3><br/>';
 					var html='<html><head><base href="'+base+'/" target="_blank"></head><body>'+cabecera+$(this).html()+'</body></html>';
 					$(nuevaventana.document.body).html(html);
@@ -1947,9 +1947,6 @@ function RefrescarTabIndex()
 	$('#pers_fijo').attr('tabindex', tabindex++);
 	$('#pers_eventual').attr('tabindex', tabindex++);
 
-	$('#ing_hab_disp_mensual').attr('tabindex', tabindex++);
-	$('#tar_med_habitac').attr('tabindex', tabindex++);
-
 	for(key in tipo_cliente_adr)
 	{
 		$('#adr_' + tipo_cliente_adr[key]).attr('tabindex', tabindex++);
@@ -1964,6 +1961,9 @@ function RefrescarTabIndex()
 		else
 			$('#pct_habocup_' + tipo_cliente_adr[key]).attr('tabindex', tabindex++);
 	}
+
+	$('#tar_med_habitac').attr('tabindex', tabindex++);
+	$('#ing_hab_disp_mensual').attr('tabindex', tabindex++);
 }
 
 function CambiarModoIntroduccion(modo)

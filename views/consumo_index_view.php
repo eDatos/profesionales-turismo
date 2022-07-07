@@ -51,7 +51,7 @@ $(document).ready( function() {
 		    <h2 class="titulo_2">Facturas anteriores</h2>
 		    <div class="subrayado"></div>
 		    <div style="width:50%; float:left;">
-		        <h2 class="titulo_3">Sus facturas más recientes (menos de un año)</h2>
+		        <h2 class="titulo_3">Sus facturas cerradas más recientes (menos de un año)</h2>
 		        <?php if (isset($facturasRecientes) && count($facturasRecientes) > 0): ?>
 		        <ul class="lista_sin_punto indentado">
 		        	<?php foreach($facturasRecientes as $facturaReciente): ?>

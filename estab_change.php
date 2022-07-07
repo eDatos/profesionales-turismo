@@ -13,6 +13,7 @@ $view_vars = array('establecimiento' => $establecimiento);
 if ($page->request_post(ARG_OP) == 'ce')
 {
 	/// Registrar la modificacion a los datos del establecimiento.
+    $fecha_aplicacion=$page->request_post('f_aplicacion');
 	$mods = array();
 	iff_post($page, $mods, 'den', 'nombre_establecimiento', $establecimiento->nombre_establecimiento);
 	iff_post($page, $mods, 'nplazas', 'num_plazas', $establecimiento->num_plazas);
@@ -47,7 +48,7 @@ if ($page->request_post(ARG_OP) == 'ce')
 	$res_op = true;
 	if (count($mods) > 0)
 	{
-		$fecha_reg = $establecimiento->registrar_modificacion($establecimiento->id_establecimiento, $page->get_current_userid(), $mods);
+	    $fecha_reg = $establecimiento->registrar_modificacion($establecimiento->id_establecimiento, $page->get_current_userid(), $mods, $fecha_aplicacion);
 		
 		$estUser = $page->load_current_user_data();
 		 
@@ -63,7 +64,7 @@ if ($page->request_post(ARG_OP) == 'ce')
 		
 		if ($fecha_reg !== false)
 		{
-			$texto .= "\nLa modificación se ha registrado en la base de datos con fecha: ".$fecha_reg."\n";
+		    $texto .= "\nLa modificación se ha registrado en la base de datos con fecha: ".$fecha_reg.".\nFecha de entrada en vigor de los cambios: ".$fecha_aplicacion.".\n";
 		}
 		else 
 		{

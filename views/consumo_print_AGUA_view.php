@@ -406,8 +406,8 @@ $(document).ready( function() {
 		<p><b>Calibre:</b> <?= addslashes($calibres_sel) ?></p>
 		<p><b>Tipo de contador:</b> <?= addslashes($tiposContador_sel) ?></p>
 		*/?>
-		<p><b>Lectura anterior (<?= $FechaInicioPeriodo; ?>):</b> <?= $LecturaAnterior ?></p>
-		<p><b>Lectura actual (<?= $FechaFinalPeriodo; ?>):</b> <?= $LecturaActual ?></p>
+		<p><b>Lectura anterior (<?= $FechaInicioPeriodo; ?>):</b> <?= $LecturaAnterior ?> M<sup>3</sup></p>
+		<p><b>Lectura actual (<?= $FechaFinalPeriodo; ?>):</b> <?= $LecturaActual ?> M<sup>3</sup></p>
 		<p><b>Tipo de lectura:</b> <?= ($esLecturaReal)?'REAL':'ESTIMADA' ?></p>
 		<?php /*
 		<p><b>Tarifa:</b> <?= addslashes($tarifas_sel) ?></p>

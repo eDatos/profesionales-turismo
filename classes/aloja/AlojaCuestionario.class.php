@@ -300,7 +300,7 @@ class AlojaCuestionario
     			$total_hab += ($hab->uso_individual + $hab->uso_doble + $hab->otras);
     		}
    		}
-		//Modif para que no falle el cálculo del Revpar cuando son datos ficticios y no salía 0.01 sino menor y además daba error en las validaciones.
+		//Modificado para que no falle el cálculo del Revpar cuando son datos ficticios y no salía 0.01 sino menor y además daba error en las validaciones.
 		if ( $this->precios->adr_mensual == 0.01)
 		{
 			$revpar_mensual_calculado = 0.01;

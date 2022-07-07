@@ -587,7 +587,7 @@ class Establecimiento
      * Registra las modificaciones de los datos del establecimiento.
      * @param unknown_type $modificaciones
      */
-    public function registrar_modificacion($estid, $userid, $modificaciones)
+    public function registrar_modificacion($estid, $userid, $modificaciones, $fecha_aplicacion=null)
     {
     	if ($modificaciones != null && count($modificaciones) > 0)
     	{
@@ -612,11 +612,21 @@ class Establecimiento
 	    		$i++;
 	    	}
 	    	
+	    	if($fecha_aplicacion!=null)
+	    	{
+	    	    $sql.=", FECHA_ENTRADA_VIGOR";
+	    	}
+	    	
 	    	$sql.=") values (to_date('".$fecha_grabacion."','yyyy-mm-dd HH24:MI:SS'),'".$estid."','".$userid."'";
 	    	
 	    	foreach ($modificaciones as $clave=>$valor)
 	    	{
 	    		$sql.=",".DbHelper::prepare_string($valor);
+	    	}
+	    	
+	    	if($fecha_aplicacion!=null)
+	    	{
+	    	    $sql.=", to_date('".$fecha_aplicacion."','dd/mm/yyyy')";
 	    	}
 	    	
 	    	$sql.=")";

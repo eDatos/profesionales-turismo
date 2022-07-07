@@ -1,3 +1,8 @@
+<script type="text/javascript" src="js/jquery-ui-1.9.1.custom.js"></script>
+<script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/lib/messages_es.js"></script>
+<script type="text/javascript" src="js/inputfields.js"></script>
+<script type="text/javascript" src="js/dates.js"></script>
 <script>
 var valoresIniciales=[];
 function validarSubmit(form)
@@ -8,22 +13,58 @@ function validarSubmit(form)
 		alert("Solicitud de modificación no enviada. No hay cambios que enviar.");
 	return res;
 }
+function EnviarForm(form)
+{
+	if(validarSubmit(form)==false)
+	{
+		event.preventDefault();
+		return false;
+	}
+	var codigo="<div class='cuadro fondo_amarillo'>"+
+	"<fieldset><label for=\"fecha_aplicacion\">Fecha de entrada en vigor de los cambios: </label>"+
+	"<input placeholder=\"<?= DateHelper::getDateFormat("show") ?>\" class=\"datepicker\" id=\"fecha_aplicacion\""+
+	" name=\"fecha_aplicacion\" type=\"text\" value=\"\" style=\"width:90px\" _required=\"required\"/>"+
+	"</fieldset></div>";
+	$("#msg_enviar").html(codigo);
+	$(".datepicker").datepicker( { dateFormat: "<?= DateHelper::getDateFormat("datepicker") ?>" } );
+	$( "#dialog-enviar" ).dialog({
+		autoOpen: false,
+		resizable: false,
+		modal: true,
+		height: "auto",
+		width: "auto",
+		position : { my: "center", at: "center", of: window },
+		buttons: {
+			"Aceptar": function() {
+				var fecha=$('#fecha_aplicacion').val();
+				if(fecha=="")
+				{
+					alert("Debe especificar una fecha de aplicación de los cambios.");
+					//$( this ).dialog( "close" );
+					return;
+				}
+				$('#f_aplicacion').val(fecha);
+				$("#ef").submit();
+				$( this ).dialog( "close" );
+			},
+			"Cancelar": function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	});
+	$( "#dialog-enviar" ).dialog("open");
+}
 $(document).ready(function() {
-			$("#enviarBtn").button();
-			$("#resetBtn").button();
-			$("input:text:visible:first").focus();
+	$("#enviarBtn").button().click(function(){
+		EnviarForm($("#ef"));
+	});
+	$("#resetBtn").button();
+	$("input:text:visible:first").focus();
+	$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+	$(".datepicker").datepicker( { dateFormat: "<?= DateHelper::getDateFormat("datepicker") ?>" } );
 
-			$("#ef table input").each(function(index,element){valoresIniciales[index]=element.value;});
-			$("#ef").submit(
-					function(event)
-					{
-						if(validarSubmit(this)==false)
-						{
-							event.preventDefault();
-							return false;
-						}
-					});
-		});
+	$("#ef table input").each(function(index,element){valoresIniciales[index]=element.value;});
+});
 </script>
 <!-- COMIENZO BLOQUE INTERIOR -->
 <?php if(isset($res)): ?>
@@ -69,7 +110,8 @@ Todo ello al amparo del <b>secreto estadístico establecido en la Ley 1/1991 de E
 		<div class="cuadro fondo_gris">
 		  <h2 class="titulo_2">Datos actuales de su establecimiento</h2>
 	      <div class="subrayado"></div>
-			<form id="ef" name="ef" action="#" method="post">  
+			<form id="ef" name="ef" action="#" method="post">
+				<input type="hidden" id="f_aplicacion" name="f_aplicacion" value="1">
 				   <table style="margin-top:8px;width:100%">
 	                  <tr style="line-height:8px;">
 	                    <td style="width:57%" class="formlabel">Razón social</td>
@@ -178,12 +220,12 @@ Todo ello al amparo del <b>secreto estadístico establecido en la Ley 1/1991 de E
 	                  <tr style="line-height:8px;">
 	                    <td  class="formlabel">Teléfono</td>
 	                    <td  class="formlabel">Fax</td>
-	                    <td  class="formlabel">Email</td>
+	                    <td  class="formlabel">Email comunicaciones Encuesta de Alojamiento</td>
 	                  </tr>
 	                  <tr>
 	                    <td><input name="tel1" style="margin-left:0px;" type="text" maxlength="15" size="20" value="<?= @$establecimiento->telefono ?>"></td>
 		                <td><input name="fax1" style="margin-left:0px;" type="text" maxlength="13" size="20" value="<?= @$establecimiento->fax ?>"></td>
-		                <td><input name="email1" style="margin-left:0px;" type="text" maxlength="100" size="40" value="<?= @$establecimiento->email ?>"></td>
+		                <td><input name="email1" style="margin-left:0px;" type="text" maxlength="100" size="60" value="<?= @$establecimiento->email ?>"></td>
 		              </tr>	
 	                  <tr style="font-size:11px;line-height:3px;">
 	                    <td><?= @$establecimiento->telefono ?></td>
@@ -195,12 +237,12 @@ Todo ello al amparo del <b>secreto estadístico establecido en la Ley 1/1991 de E
 	                  <tr style="line-height:8px;">
 	                    <td  class="formlabel">Teléfono 2</td>
 	                    <td  class="formlabel">Fax 2</td>
-	                    <td  class="formlabel">Email 2</td>
+	                    <td  class="formlabel">Email comunicaciones Encuesta de Expectativas</td>
 	                  </tr>
 	                  <tr>
 	                    <td><input name="tel2" style="margin-left:0px;" type="text" maxlength="15" size="20" value="<?= @$establecimiento->telefono2 ?>"></td>
 		                <td><input name="fax2" style="margin-left:0px;" type="text" maxlength="13" size="20" value="<?= @$establecimiento->fax2 ?>"></td>
-		                <td><input name="email2" style="margin-left:0px;" type="text" maxlength="100" size="40" value="<?= @$establecimiento->email2 ?>"></td>
+		                <td><input name="email2" style="margin-left:0px;" type="text" maxlength="100" size="60" value="<?= @$establecimiento->email2 ?>"></td>
 		              </tr>	
 	                  <tr style="font-size:11px;line-height:3px;">
 	                    <td><?= @$establecimiento->telefono2 ?></td>
@@ -219,7 +261,8 @@ Todo ello al amparo del <b>secreto estadístico establecido en la Ley 1/1991 de E
 	                  <td><?= @$establecimiento->url ?></td>
 	                  </tr>
 		          </table>
-	             <input id="enviarBtn" type="submit" value="Enviar modificaciones" style="margin: 10px 0px 10px 0px;"/>        
+	             <!-- <input id="enviarBtn" type="submit" value="Enviar modificaciones" style="margin: 10px 0px 10px 0px;"/> -->
+	             <input id="enviarBtn" type="button" value="Enviar modificaciones" style="margin: 10px 0px 10px 0px;"/>       
 	             <input id="resetBtn" type="reset" value="Dejar como estaba" style="margin: 10px 0px 10px 0px;"/>
 	             <input type="hidden" name="<?= ARG_OP ?>" value="ce"/>        
 			</form>          
@@ -229,3 +272,6 @@ Todo ello al amparo del <b>secreto estadístico establecido en la Ley 1/1991 de E
 </div>
 <!-- FIN CAJA AMARILLA -->
 <?php endif;?>
+<div id="dialog-enviar" title="Enviar modificaciones" >
+	<div id="msg_enviar" style="text-align: left"></div>
+</div>

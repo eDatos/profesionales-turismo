@@ -17,6 +17,7 @@ class DB_Sql {
      will change to a zombie, if I don't set this to FALSE!
      If unsure try it out, if it works. */
   var $OraPutEnv   = false;
+
   var $Database = "";
   var $User     = "";
   var $Password = "";

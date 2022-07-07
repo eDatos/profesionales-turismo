@@ -137,7 +137,7 @@ class AlojaXmlReader
     			$err_dets[] = $liberr->message . " en la linea " . $liberr->line;
     		}
     		
-    		$this->errors->log_error(ERROR_GENERAL,"Ocurrió un error de esquema al analizar el documento. Por favor, comuníqueselo a la empresa que ha desarrollado su programa o bien remita por correo electrónico el fichero al ISTAC y le indicaremos las correcciones a realizar:", $err_dets);
+    		$this->errors->log_error(ERROR_GENERAL,"El fichero no cumple el esquema del ISTAC. Comuníquelo a quien ha desarrollado su programa y vuelva a generar y cargar el correcto:", $err_dets);
     		 
     		
     		libxml_clear_errors();

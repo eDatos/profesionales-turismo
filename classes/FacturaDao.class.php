@@ -1685,7 +1685,7 @@ class FacturaDao
         return $resultados;
     }
     
-    public function buscarFacturasRecientes($estid)
+    public function buscarFacturasRecientes($estid, $cerrada=true)
     {
         $sql="SELECT ttc.ID_CONSUMO,ttc.ID_ESTABLECIMIENTO,tte.NOMBRE_ESTABLECIMIENTO,ttc.ID_USUARIO,ttc.NUM_FACTURA,TO_CHAR(ttc.FECHA,'DD/MM/YYYY') fr,ttc.TIPO,TO_CHAR(ttc.FECHA_CIERRE,'DD/MM/YYYY') fc FROM TB_CONSUMOS ttc, TB_ESTABLECIMIENTOS_UNICO tte";
         $sql.=" WHERE ttc.ID_ESTABLECIMIENTO=tte.ID_ESTABLECIMIENTO AND (ttc.FECHA BETWEEN ADD_MONTHS(TRUNC(SYSDATE),-12) AND TRUNC(SYSDATE))";
@@ -1698,6 +1698,10 @@ class FacturaDao
         {
             $params[':estid']=(string)$estid;
             $sql.=" AND ttc.ID_ESTABLECIMIENTO=:estid";
+        }
+        if($cerrada==true)
+        {
+            $sql.= " AND (ttc.FECHA_CIERRE IS NOT NULL)";
         }
         $sql = DbHelper::prepare_sql($sql,$params);
         $this->db->query($sql);

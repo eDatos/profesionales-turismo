@@ -20,7 +20,7 @@ $(document).ready(function() {
 </script>
 <!-- COMIENZO BLOQUE INTERIOR -->
 <div id="bloq_interior">
-	<h1 class="titulo_1" style="float:left;">Encuesta de Alojamiento Turístico en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?></h1>	
+	<h1 class="titulo_1" style="float:left;">Encuesta de Alojamiento Turístico</h1>	
 	<a id="ayuda_aloja" href="javascript:MostrarAyuda('ayuda_aloja','AYUDA05<?= $es_hotel ? "_HOT" : "_APT" ?>');" class="ayudaicon enlace" style="float:right;margin-top:9px;background-position-y: 2px;" title="Ayuda (tecla de acceso: y)" accesskey="y"><strong>Ayuda</strong></a>	
 	<div style="clear:both;"></div>
 	<!-- COMIENZO COLUMNA DERECHA -->
@@ -47,16 +47,16 @@ $(document).ready(function() {
 				<?php endif ?>
 				<div class="subrayado inferior_15"></div>
 				<?php if ($page->have_any_perm(array(PERM_ADMIN,PERM_ADMIN_ISTAC,PERM_USER,PERM_RECEPCION))): ?>
+				<fieldset style="margin-bottom: 10px;">
+				<legend style="font-weight: bold;">Módulo de alojamiento</legend>
 				<div>
-					<div><span style="font-weight:bold;">Opción A.</span> Tiene la posibilidad de rellenar la encuesta mediante un fichero XML. La extensión del fichero debe ser xml. Este proceso puede tardar varios minutos dependiendo del tamaño del fichero y el tipo de conexión a Internet utilizada. <span id="ayuda_index" onclick="MostrarAyuda('ayuda_index','AYUDA06<?= $es_hotel ? "_HOT" : "_APT" ?>');" class="ayudaicon" title="Ayuda (tecla de acceso: l)" accesskey="l" >&nbsp;</span></div>
+					<div><span style="font-weight:bold;">Opción A.</span> Tiene la posibilidad de rellenar el módulo de alojamiento mediante un fichero XML. La extensión del fichero debe ser xml. Este proceso puede tardar varios minutos dependiendo del tamaño del fichero y el tipo de conexión a Internet utilizada. <span id="ayuda_index" onclick="MostrarAyuda('ayuda_index','AYUDA06<?= $es_hotel ? "_HOT" : "_APT" ?>');" class="ayudaicon" title="Ayuda (tecla de acceso: l)" accesskey="l" >&nbsp;</span></div>
 					<a id="subirXmlBtn" href="<?= $alojaXmlUrl ?>" style="width:170px; margin: 10px 0px 10px 0px;background-image: url(images/subir.gif);background-repeat: no-repeat;background-position: 8px 4px;">Subir fichero de datos</a>
 					<!--  <a class="enlace" href="comofunciona" style="margin-left:10px;">¿Cómo funciona?</a> -->			
 				</div>
-				<div style="margin:10px 0px 10px 0px;"><span style="font-weight:bold;">Opción B.</span> También tiene la posibilidad de rellenar la encuesta manualmente a través del formulario web.</div>
-				<?php endif;?>
-				<?php if ($page->have_any_perm(array(PERM_ADMIN,PERM_ADMIN_ISTAC,PERM_USER,PERM_RECEPCION))): ?>
+				<div style="margin:10px 0px 10px 0px;"><span style="font-weight:bold;">Opción B.</span> También tiene la posibilidad de rellenar el módulo manualmente a través del formulario web.</div>
 				<div class="formicon">
-					<a class="titulo_3 enlace" href="<?= $encuestaUrl ?>">Módulo de alojamiento</a>
+					<a class="titulo_3 enlace" href="<?= $encuestaUrl ?>">Formulario web</a>
 					<?php if(isset($aloja_dias_rellenos[0])): ?>
 					<span class="tx_gris"> (Rellenado del <?=$aloja_dias_rellenos[0]?> al <?=$aloja_dias_rellenos[1]?> de <?= DateHelper::mes_tostring( $aloja_cuestionario->mes,'m') ?>)
 					</span>
@@ -64,6 +64,7 @@ $(document).ready(function() {
 					<span class="tx_gris"> (Pendiente)</span>
 					<?php endif ?><br/>
 				</div>
+				</fieldset>
 				<?php endif;?>
 				<?php if ($page->have_any_perm(array(PERM_ADMIN,PERM_ADMIN_ISTAC,PERM_USER))): ?>
 				<div class="formicon">

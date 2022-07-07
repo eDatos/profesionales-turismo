@@ -14,7 +14,7 @@ define('ARG_PARTE', 'part');
 define('ARG_NUMERO_FACTURA', 'numero_factura');
 
 
-$page = PWETPageHelper::start_page(PERMS_ANY, array(PAGE_EXP_INDEX));
+$page = PWETPageHelper::start_page(PERMS_ANY, array(PAGE_CONSUMO_INDEX));
 
 $establecimiento = null;
 

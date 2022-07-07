@@ -112,7 +112,7 @@
 		<input type="hidden" name="<?= ARG_MES ?>" value="<?= $cuestionario->mes ?>">
 		<input type="hidden" name="<?= ARG_ANO ?>" value="<?= $cuestionario->ano ?>">
 	</form>
-	<h2 class="titulo_2">Encuesta de Alojamiento Turístico en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: <?= DateHelper::mes_tostring( $cuestionario->mes,'M') ?> de <?= $cuestionario->ano ?></h2>
+	<h2 class="titulo_2">Módulo de Alojamiento: <?= DateHelper::mes_tostring( $cuestionario->mes,'M') ?> de <?= $cuestionario->ano ?></h2>
     <div style="margin-bottom: 8px;<?=$solo_lectura?'display:none;':''?>">Pulse la tecla tabulador o intro<span id="ayuda_tc" onclick='MostrarAyuda("ayuda_tc","AYUDA11<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' class="ayudaicon2" title="Ayuda (tecla de acceso: k)" accesskey="k">&nbsp;</span>para moverse. Método de cumplimentado<span id="ayuda_mc" onclick='MostrarAyuda("ayuda_mc","AYUDA12<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' class="ayudaicon2" title="Ayuda (tecla de acceso: j)" accesskey="j">&nbsp;</span>: <span id="modoCumplimentado"></span></div>
     <div class="cuadro fondo_rojo_claro" style="font-size:95%;padding:2px 2px 2px 4px;">
     	<!-- <h3 class="titulo_3" style="display:inline;font-size:95%;">Importante:</h3> -->
@@ -387,22 +387,12 @@
                 <div class="subrayado" style="width:100%"> </div>
                 <table style="width:95%;margin-left:12px;margin-top:-5px;border-spacing: 0 2px;" cellpadding="0">
                     <tr>
-                        <td colspan="2" style="width:69%">Ingreso por <?= $tipo_establecimiento == 3 ? "apartamento" : "habitación"; ?> disponible mensual (RevPar) <a href='javascript: MostrarAyuda("iconoHabDispMens", "AYUDA19<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' id='iconoHabDispMens' class='ayudaicon enlace' style='cursor: help;' title='Ayuda (tecla de acceso: s)' accesskey="s"><span></span></a>:</td>
-                        <td><input type="text" id="ing_hab_disp_mensual"  maxlength="11" name="ing_hab_disp_mensual" class="numero condecimales digits" style="width:55px;" tabindex="3"> €</td>
-                        <td style="width:15px;vertical-align:middle;"><img id="imgerror_prec_ing_hab_disp_mensual" src='images/error2.png' class="cursor_hand" style="display:none;"></td>
-                    </tr>                    
-                    <tr>
-                        <td colspan="2">Tarifa media por <?= $tipo_establecimiento == 3 ? "apartamento" : "habitación"; ?> (ADR) <a href='javascript: MostrarAyuda("iconoTarMedHab", "AYUDA20<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' id='iconoTarMedHab' class='ayudaicon enlace' style='cursor: help;' title='Ayuda (tecla de acceso: t)' accesskey='t'><span></span></a>:</td>
-                        <td><input type="text" id="tar_med_habitac"  maxlength="11" name="tar_med_habitac" class="numero condecimales digits" style="width:55px;" tabindex="4"> €</td>
-                        <td style="width:15px;vertical-align:middle;"><img id="imgerror_prec_tar_med_habitac" src='images/error2.png' class="cursor_hand" style="display:none;"></td>
-                    </tr>
-                    <tr>
                         <td style="width:50%">ADR<span onclick='MostrarAyuda("iconoADR", "AYUDA21<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' id='iconoADR' class='ayudaicon2' title='Ayuda (tecla de acceso: u)' accesskey='u'>&nbsp;</span> mensual por tipo de cliente:</td>
                         <td colspan="2"><div style="text-align: right;<?=$solo_lectura?'display:none;':''?>" id="modoIntroduccionADR"></div></td>
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <table style="width:100%;" cellpadding="0" cellspacing="0">
+                            <table style="width:100%; margin-bottom: 10px;" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
                                     </td>
@@ -572,6 +562,16 @@
                             </table>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="2">Tarifa media por <?= $tipo_establecimiento == 3 ? "apartamento" : "habitación"; ?> (ADR) <a href='javascript: MostrarAyuda("iconoTarMedHab", "AYUDA20<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' id='iconoTarMedHab' class='ayudaicon enlace' style='cursor: help;' title='Ayuda (tecla de acceso: t)' accesskey='t'><span></span></a>:</td>
+                        <td><input type="text" id="tar_med_habitac"  maxlength="11" name="tar_med_habitac" class="numero condecimales digits" style="width:55px;" tabindex="4"> €</td>
+                        <td style="width:15px;vertical-align:middle;"><img id="imgerror_prec_tar_med_habitac" src='images/error2.png' class="cursor_hand" style="display:none;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width:69%">Ingreso por <?= $tipo_establecimiento == 3 ? "apartamento" : "habitación"; ?> disponible mensual (RevPar) <a href='javascript: MostrarAyuda("iconoHabDispMens", "AYUDA19<?= $tipo_establecimiento==3 ? "_APT" : "_HOT" ?>");' id='iconoHabDispMens' class='ayudaicon enlace' style='cursor: help;' title='Ayuda (tecla de acceso: s)' accesskey="s"><span></span></a>:</td>
+                        <td><input type="text" id="ing_hab_disp_mensual"  maxlength="11" name="ing_hab_disp_mensual" class="numero condecimales digits" style="width:55px;" tabindex="3"> €</td>
+                        <td style="width:15px;vertical-align:middle;"><img id="imgerror_prec_ing_hab_disp_mensual" src='images/error2.png' class="cursor_hand" style="display:none;"></td>
+                    </tr>                    
                 </table>
             </div>
 			<div style="clear: both;"> </div>				            

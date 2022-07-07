@@ -18,7 +18,7 @@ Si no es correcto, por favor, contacte con nosotros.">Cerrado en el periodo de r
 		</li>
 	<?php endif; ?>
     <?php if (isset($aloja_encuesta_abierta) && $aloja_encuesta_abierta): ?>
-        <li><a class="titulo_3 enlace" href="<?= $site[PAGE_ALOJA_INDEX]; ?>">Alojamiento Turístico en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>:  <span style="font-weight:normal;"><?= DateHelper::mes_tostring( $aloja_cuestionario->mes,'M')?> de <?=$aloja_cuestionario->ano?></span></a><br/>
+        <li><a class="titulo_3 enlace" href="<?= $site[PAGE_ALOJA_INDEX]; ?>">Alojamiento Turístico:  <span style="font-weight:normal;"><?= DateHelper::mes_tostring( $aloja_cuestionario->mes,'M')?> de <?=$aloja_cuestionario->ano?></span></a><br/>
 		<?php if($aloja_dias_rellenos[0] != ''): ?>
 		<span class="tx_gris">(Rellenado del <?=$aloja_dias_rellenos[0]?> al <?=$aloja_dias_rellenos[1]?> de <?= DateHelper::mes_tostring( $aloja_cuestionario->mes, 'm') ?>)
 		</span>
@@ -30,7 +30,9 @@ Si no es correcto, por favor, contacte con nosotros.">Cerrado en el periodo de r
 Si no es correcto, por favor, contacte con nosotros.">Cerrado en el periodo de referencia</span>
 		<?php endif ?>
 		</li>
+		<?php if (isset($muestra_btn_xml) && $muestra_btn_xml): ?>
 		<div><a id="subirXmlBtn" href="<?= $alojaXmlUrl ?>" style="width:170px; margin: 10px 0px 10px 0px;background-image: url(images/subir.gif);background-repeat: no-repeat;background-position: 8px 4px;">Subir fichero de datos</a></div>
+		<?php endif ?>
     <?php endif ?>
     <?php if ((!isset($exp_encuesta_abierta) || !$exp_encuesta_abierta) && (!isset($aloja_encuesta_abierta) || !$aloja_encuesta_abierta)) : ?>
         <li>Actualmente no existe ninguna encuesta abierta.</li>

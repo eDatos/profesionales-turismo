@@ -296,6 +296,7 @@ class EmpleoCuestionario
         }
         
         // Regla #2: Debe existir al menos un empleador no externo.
+        /*
         $res=false;
         foreach($this->numero_empleados as $id_empleador => $empleados)
         {
@@ -309,6 +310,7 @@ class EmpleoCuestionario
         {
             $errs->log_error(ERROR_GENERAL, "Debe existir al menos un empleador no externo activo.");
         }
+        */
         
         
 //         $a=new EmpleoFilaFormulario();
@@ -720,8 +722,9 @@ class EmpleadoresDao
             
             $cuestionario->numero_empleados=array();
 
-            $sql="SELECT A.ID_EMPLEADOR,A.EXTERNO,A.NUMERO_EMPLEADOS, B.DESCRIPCION FROM TB_EMPLEO_CUEST_DET A, TB_EMPLEADORES B WHERE A.ID_EMPLEADOR=B.ID_EMPLEADOR AND A.ID=:id_cuest ORDER BY A.ID_EMPLEADOR";
+            $sql="SELECT A.ID_EMPLEADOR,A.EXTERNO,A.NUMERO_EMPLEADOS, B.DESCRIPCION FROM TB_EMPLEO_CUEST_DET A, TB_EMPLEADORES B WHERE A.ID_EMPLEADOR=B.ID_EMPLEADOR AND B.ID_ESTABLECIMIENTO=:estid AND A.ID=:id_cuest ORDER BY A.ID_EMPLEADOR";
             $params=array();
+            $params[':estid']=(string)$est_id;
             $params[':id_cuest']=(string)$cuestionario->id;
             
             $sql = DbHelper::prepare_sql($sql,$params);
@@ -878,9 +881,9 @@ class EmpleadoresDao
                             if($this->db->affected_rows()==1)
                             {
                                 /// Insertar los detalles
+                                $succes=true;
                                 if(($cuestionario->numero_empleados!=null)&&(count($cuestionario->numero_empleados)>0))
                                 {
-                                    $succes=true;
                                     foreach($cuestionario->numero_empleados as $id_empleador => $filaCuestionario)
                                     {
                                         $sql="INSERT INTO TB_EMPLEO_CUEST_DET(ID,ID_ESTABLECIMIENTO,ID_EMPLEADOR,EXTERNO,NUMERO_EMPLEADOS) VALUES(:id_cuest,:estid,:id_empleador,:externo,:numero_empleados)";
@@ -898,11 +901,11 @@ class EmpleadoresDao
                                             break;
                                         }
                                     }
-                                    if ($succes)
-                                    {
-                                        // La operación finalizó con éxito.
-                                        return $this->db->commit();
-                                    }
+                                }
+                                if ($succes)
+                                {
+                                    // La operación finalizó con éxito.
+                                    return $this->db->commit();
                                 }
                             }
                         }

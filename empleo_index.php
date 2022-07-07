@@ -9,7 +9,7 @@ define('ARG_MES_ENCUESTA', 'mes_encuesta');
 define('ARG_ANO_ENCUESTA', 'ano_encuesta');
 
 
-$page = PWETPageHelper::start_page(PERMS_ANY, array(PAGE_EXP_INDEX));
+$page = PWETPageHelper::start_page(PERMS_ANY, array(PAGE_EMPLEO_INDEX));
 
 $establecimiento = null;
 
@@ -68,7 +68,7 @@ $ea_lista = $dao->obtener_encuestas_anteriores($establecimiento->id_establecimie
 foreach($ea_lista as $enc_ant)
 {
     $ne = array();
-    $ne['url'] = $page->build_url(PAGE_EMPLEO_FORM, array(ARG_MES_ENCUESTA=>$enc_ant->mes, ARG_ANO_ENCUESTA=>$enc_ant->ano));
+    $ne['url'] = $page->build_url(PAGE_EMPLEO_FORM, array(ARG_MES=>$enc_ant->mes, ARG_ANO=>$enc_ant->ano));
     $ne['url_acuse'] = $page->build_url(PAGE_EMPLEO_ACUSE, array(ARG_MES=>$enc_ant->mes, ARG_ANO=>$enc_ant->ano));
     $ne['mes'] = $enc_ant->mes;
     $ne['ano'] = $enc_ant->ano;

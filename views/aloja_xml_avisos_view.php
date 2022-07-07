@@ -296,7 +296,7 @@ $(document).ready( function() {
 			<p><b>Muchas gracias por su colaboración.</b></p>
 			<p>Si lo desea puede descargar un acuse de recibo.</p>
 			<input class="search ui-button ui-widget ui-state-default ui-corner-all" name="printAcuseBtn" type="button" value="Descargar PDF" style="width:120px; margin: 10px 0px 10px 0px;background-image: url(images/descargar.png);background-repeat: no-repeat;background-position: 8px 4px;padding-left:27px;" role="button" aria-disabled="false">
-        </div>
+        	</div>
         <?php else :?>
 			<div class="cuadro fondo_gris noprint" style="text-align: justify;">
 				<h3 class="titulo_3" style="margin-bottom:4px;" >INFORME DE AVISOS</h3>

@@ -354,11 +354,11 @@ $(document).ready( function() {
 
 			<!-- <fieldset>
 			<legend>Consumo</legend>-->
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ANTERIOR ?>">Lectura anterior (<?= $FechaPeriodoInicial; ?>): </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ANTERIOR ?>">Lectura anterior [<?= $FechaPeriodoInicial; ?>] (M<sup>3</sup>): </label>
 	        <input type="text" class="numero condecimales" data-numdecimales="2" maxlength="9" name="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ANTERIOR ?>" id="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ANTERIOR ?>" value="<?= isset($LecturaAnterior)?$LecturaAnterior:'' ?>" title="Lectura del contador al final del periodo facturado anterior" _required="required">
 
             <div>
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ACTUAL ?>">Lectura actual (<?= $FechaPeriodoFinal; ?>): </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ACTUAL ?>">Lectura actual [<?= $FechaPeriodoFinal; ?>] (M<sup>3</sup>): </label>
 	        <input type="text" class="numero condecimales" data-numdecimales="2" maxlength="9" name="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ACTUAL ?>" id="<?= VAR_FACTURA_AGUA_DATOS_CONSUMO_LECTURA_ACTUAL ?>" value="<?= isset($LecturaActual)?$LecturaActual:'' ?>" title="Lectura del contador al final del periodo facturado actual" _required="required">
 	        <input name="overflow" id="overflow" type="checkbox" class="chkbox" title="Marque esta casilla si el contador ha superado su límite" /><label for="overflow" class="chkbox" title="Marque esta casilla si el contador ha superado su límite">contador rebasado</label>
 	        </div>

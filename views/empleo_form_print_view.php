@@ -15,7 +15,7 @@
 		  		<div id='pagina' style='margin-top:8px;'>
 		  		<img src="images/logo_istac.jpg"/>
 		  		<br/><br/>
-				<h2 class='titulo_2'>Encuesta de Empleo Turístico en Establecimientos <?= $datos_estab->id_tipo_establecimiento==3 ? "Extrahoteleros" : "Hoteleros" ?>: <?= DateHelper::mes_tostring( $cuestionario->mes,'M') ?> de <?= $cuestionario->ano ?></h2>
+				<h2 class='titulo_2'>Encuesta de Empleo: <?= DateHelper::mes_tostring( $cuestionario->mes,'M') ?> de <?= $cuestionario->ano ?></h2>
 			        <br/>
 				    <table cellpadding="0" cellspacing="0" style="width:957px;">
 				    	<tr>

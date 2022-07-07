@@ -74,11 +74,13 @@ function validarDatos(parametro)
 		if($("input[name='"+arg_activa+'_'+nd+"']").is(':checked'))
 			nEmpleadoresActivos++;
 	}
+	/*
 	if((externos==false)&&(nEmpleadoresActivos==0))
 	{
 		alert("Debe haber al menos un registro activo para poder continuar con la encuesta.");
 		return false;
 	}
+	*/
 	return true;
 }
 
@@ -309,6 +311,11 @@ $(document).ready( function() {
 	});
 
 	$("input[name='guardarBtn']").button().click(function() {
+		if(soloLectura)
+		{
+			window.location.href=navSgteURL;
+			return;
+		}
 		GuardarForm(function(hayCambios) {
 			if(hayCambios)
 			{

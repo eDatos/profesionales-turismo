@@ -23,7 +23,7 @@
 		  		
 		  		<img src="images/logo_istac.jpg"/>
 		  		<br/><br/>
-				<h2 class='titulo_2'>Encuesta de Alojamiento Turístico en Establecimientos <?= $datos_estab->id_tipo_establecimiento==3 ? "Extrahoteleros" : "Hoteleros" ?>: <?= DateHelper::mes_tostring( $cuestionario->mes,'M') ?> de <?= $cuestionario->ano ?></h2>
+				<h2 class='titulo_2'>Módulo de Alojamiento: <?= DateHelper::mes_tostring( $cuestionario->mes,'M') ?> de <?= $cuestionario->ano ?></h2>
 			        <img src="images/calendario.png" style="margin-top:-3px;vertical-align:middle;"/>&nbsp;&nbsp;<strong>Días abierto en <?= DateHelper::mes_tostring( $cuestionario->mes,'m') ?> de <?= $cuestionario->ano ?>:</strong>&nbsp;<?= @$cuestionario->dias_abierto ?><br/>
 			        <strong><?=count($ent_sal_pern); ?> nacionalidades y provincias seleccionadas</strong>
 			        <br/><br/>

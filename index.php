@@ -63,7 +63,11 @@ else if ($page->have_any_perm(array(PERM_USER,PERM_RECEPCION,PERM_CONSUMOS)))
 	
     /// 3. Preparar las variables que se utilizan en la vista.
     $viewvars = array();
-	
+
+    if ($page->user_can_do(OP_ALOJAMIENTO))
+    {
+        $viewvars['muestra_btn_xml'] = true;
+    }
     if ($page->user_can_do(OP_EXPECTATIVAS))
     {
 	    $exp_ctl = new ExpectativasController();

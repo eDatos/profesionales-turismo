@@ -356,7 +356,7 @@ class NSS extends IPF
      public function toString()
      {
          $codigo=NSS::clean($this->id);
-         return substr($codigo,0,2).'-'.substr($codigo,2,strlen($codigo)-5).'-'.substr($codigo,-2);
+         return substr($codigo,0,2).'-'.substr($codigo,2,strlen($codigo)-4).'-'.substr($codigo,-2);
      }
      
      /**

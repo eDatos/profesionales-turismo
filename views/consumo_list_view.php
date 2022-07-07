@@ -461,14 +461,21 @@ function cargarResultados(resultados)
 		for(var i=0;i<resultados.length;i++)
 		{
 			salida+='	  <tr nombre="'+resultados[i].num_factura+'">';
-			<?php if($esAdmin): ?>
-			salida+='		<td style="width:4%; text-align: center">'+resultados[i].id_consumo+'</td>';
-			salida+='		<td style="width:35%;">('+ resultados[i].id_establecimiento + ') ' + resultados[i].nombre_establecimiento +'</td>';
-			var link="<?= $navToUrl.'?'.ARG_PARTE.'=1&'.ARG_ESTID ?>="+resultados[i].id_establecimiento+"&<?= ARG_NUMERO_FACTURA?>="+resultados[i].num_factura;
-			<?php else: ?>
-			var link="<?= $navToUrl.'?'.ARG_NUMERO_FACTURA?>="+resultados[i].num_factura;
-			<?php endif; ?>
-			salida+='		<td style="width:10%; text-align: center"><a title="Ver factura" href="'+link+'">'+resultados[i].num_factura+'</a></td>';
+			if(resultados[i].cerrada)
+			{
+    			<?php if($esAdmin): ?>
+    			salida+='		<td style="width:4%; text-align: center">'+resultados[i].id_consumo+'</td>';
+    			salida+='		<td style="width:35%;">('+ resultados[i].id_establecimiento + ') ' + resultados[i].nombre_establecimiento +'</td>';
+    			var link="<?= $navToUrl.'?'.ARG_PARTE.'=1&'.ARG_ESTID ?>="+resultados[i].id_establecimiento+"&<?= ARG_NUMERO_FACTURA?>="+resultados[i].num_factura;
+    			<?php else: ?>
+    			var link="<?= $navToUrl.'?'.ARG_NUMERO_FACTURA?>="+resultados[i].num_factura;
+    			<?php endif; ?>
+    			salida+='		<td style="width:10%; text-align: center"><a title="Ver factura" href="'+link+'">'+resultados[i].num_factura+'</a></td>';
+			}
+			else
+			{
+    			salida+='		<td style="width:10%; text-align: center">'+resultados[i].num_factura+'</td>';
+			}
 			var d=new Date(resultados[i].fecha.date);
 			salida+='		<td style="text-align: center">'+('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + d.getFullYear()+'</td>';
 			salida+='		<td style="text-align: center">';
@@ -484,7 +491,7 @@ function cargarResultados(resultados)
 			salida+='		<td style="text-align: center">'+ (resultados[i].cerrada ? 'Sí':'No') +'</td>';
 			salida+='		<td style="width:25%;">';
 			salida+='		<div class="botoneraderecha">';
-			if(<?= ($esAdmin) ? 'true':'resultados[i].cerrada' ?>)
+			if(<?= ($esAdmin) ? 'true':'resultados[i].cerrada==false' ?>)
 			{
 				salida+='		<!-- Botón modificar -->';
 				salida+='		<form name="df" action="<?= $urlModificacion ?>" method="post">';
@@ -493,12 +500,12 @@ function cargarResultados(resultados)
 				salida+='		<input name="<?= ARG_NUMERO_FACTURA ?>" type="hidden" value="'+resultados[i].num_factura+'">';
 				salida+='		<a href="22#" name="operationBtn" class="operationBtn" role="button" data-numfactura="'+resultados[i].num_factura+'" data-estid="'+resultados[i].id_establecimiento+'" data-estnombre="'+ escapeHtml(resultados[i].nombre_establecimiento) +'" data-cerrada="'+(resultados[i].cerrada ? 'S':'N')+'" title="Reabrir y/o Modificar factura">Modificar</a>';
 				salida+='		</form>';
+    			salida+='		<!-- Botón eliminar -->';
+    			salida+='		<a role="button" title="Borrar factura" class="btnEliminar" href="22#" data-numfactura="'+resultados[i].num_factura+'" data-estid="'+resultados[i].id_establecimiento+'" data-estnombre="'+ escapeHtml(resultados[i].nombre_establecimiento) +'">Eliminar</a>';
+    			salida+='		</div>';
+    			salida+='		</td>';
+    			salida+='	   </tr>';
 			}
-			salida+='		<!-- Botón eliminar -->';
-			salida+='		<a role="button" title="Borrar factura" class="btnEliminar" href="22#" data-numfactura="'+resultados[i].num_factura+'" data-estid="'+resultados[i].id_establecimiento+'" data-estnombre="'+ escapeHtml(resultados[i].nombre_establecimiento) +'">Eliminar</a>';
-			salida+='		</div>';
-			salida+='		</td>';
-			salida+='	   </tr>';
 		}
 		salida+='</table>';
 	}

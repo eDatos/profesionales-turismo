@@ -69,7 +69,6 @@ $(document).ready( function() {
 			<ul class="lista_sin_punto">
 				<li><a class="enlace" href="<?=$contacto_url?>" target="_blank">Formulario de contacto</a></li>
 	            <li><strong><?=$contacto_telefono?></strong> (tel&eacute;fono)</li>
-	            <li><strong><?=$contacto_fax?></strong> (fax)</li>
 	            <li><a class="enlace" href="mailto:<?=$contacto_mail?>"><?=$contacto_mail?></a></li>
 			</ul>
 		</div>

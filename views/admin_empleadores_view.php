@@ -339,7 +339,7 @@ $(document).ready( function() {
 				</tr>
 				<tr class="empleadorInterno">
 					<td style="width:20%;"><label for="<?=ARG_DESCRIPCION?>">Descripción:</label></td>
-					<td><input type="text" maxlength="90" style="margin-left:2px;width:400px;" name="<?=ARG_DESCRIPCION?>"/></td>
+					<td><input type="text" maxlength="90" style="margin-left:2px;width:500px;" name="<?=ARG_DESCRIPCION?>" placeholder="Indique tipo de personal por el que se cotiza en esta cuenta (ej.: fijo, temporal,...)"/></td>
 				</tr>
             </table>
             <div>

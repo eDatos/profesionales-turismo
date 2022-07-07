@@ -140,12 +140,12 @@
 
 <!-- COMIENZO BLOQUE INTERIOR -->
 <div id="bloq_interior">
-	<h2 class="titulo_2">Encuesta de Alojamiento Turístico en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: <?= DateHelper::mes_tostring( $mes_encuesta,'M') ?> de <?= $ano_encuesta ?></h2>
+	<h2 class="titulo_2">Módulo de Alojamiento Turístico: <?= DateHelper::mes_tostring( $mes_encuesta,'M') ?> de <?= $ano_encuesta ?></h2>
 	<div class="subrayado"></div>
 	<?php if ($esAdmin) : ?>
 		<div style="margin-top:15px; margin-bottom:15px;">Seleccione las nacionalidades y provincias a las que pertenecen los huéspedes de su establecimiento para introducir los datos de entradas, salidas y pernoctaciones de <?= DateHelper::mes_tostring( $mes_encuesta,'M') ?> de <?= $ano_encuesta ?>.</div>
 	<?php else: ?>
-		Para responder a la encuesta puede subir un fichero de datos o bien introducir los datos manualmente.<br/><br/>
+		Para responder a este módulo puede subir un fichero de datos o bien introducir los datos manualmente.<br/><br/>
 		<ul>
 		<li class="opcion" >
 			<h2 class="cabecera_1er_nivel">Opción <strong>A. Subir fichero</strong> <span id="ayuda_xml" onclick="MostrarAyuda('ayuda_xml','AYUDA09<?= $es_hotel ? "_HOT" : "_APT" ?>');" class="ayudaicon" title="Ayuda (tecla de acceso: l)" accesskey="l" >&nbsp;</span></h2>

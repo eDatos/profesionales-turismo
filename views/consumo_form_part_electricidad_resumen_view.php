@@ -109,9 +109,9 @@ $(document).ready( function() {
 	<div style="padding: 4px;">
     <form method="post" action="<?= $urlNext ?>" id="formdata">
     	<fieldset>
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_POTENCIA_FACTURADA_IMPORTE_TOTAL ?>">Importe Potencia: </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_POTENCIA_FACTURADA_IMPORTE_TOTAL ?>">Importe Potencia (€): </label>
 	        <input type="text" class="numero condecimales" name="<?= VAR_FACTURA_ELECTRICIDAD_POTENCIA_FACTURADA_IMPORTE_TOTAL ?>" id="<?= VAR_FACTURA_ELECTRICIDAD_POTENCIA_FACTURADA_IMPORTE_TOTAL ?>" value="<?= isset($TotalImportePotenciaFacturada)?$TotalImportePotenciaFacturada:'' ?>" _required="required">
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_ENERGIA_FACTURADA_IMPORTE_TOTAL ?>">Importe Energía: </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_ENERGIA_FACTURADA_IMPORTE_TOTAL ?>">Importe Energía (€): </label>
 	        <input type="text" class="numero condecimales" name="<?= VAR_FACTURA_ELECTRICIDAD_ENERGIA_FACTURADA_IMPORTE_TOTAL ?>" id="<?= VAR_FACTURA_ELECTRICIDAD_ENERGIA_FACTURADA_IMPORTE_TOTAL ?>" value="<?= isset($TotalImporteEnergiaFacturada)?$TotalImporteEnergiaFacturada:'' ?>" _required="required">
 	        <?php /*
             <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_ENERGIA ?>">Importe Energía: </label>
@@ -119,7 +119,7 @@ $(document).ready( function() {
             <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_SERVICIOS_Y_OTROS ?>">Servicios y otros conceptos: </label>
 	        <input type="text" name="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_SERVICIOS_Y_OTROS ?>" id="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_SERVICIOS_Y_OTROS ?>" value="<?= isset($TotalImporteServicios)?$TotalImporteServicios:'' ?>" _required="required">
 	        */?>
-            <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_PAGAR ?>">Total a pagar: </label>
+            <label _style="width: 300px;" for="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_PAGAR ?>">Total a pagar (€): </label>
 	        <input type="text" class="numero condecimales" name="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_PAGAR ?>" id="<?= VAR_FACTURA_ELECTRICIDAD_RESUMEN_TOTAL_PAGAR ?>" value="<?= isset($TotalPagar)?$TotalPagar:'' ?>" _required="required">
     	</fieldset>
     	<div class="botonera">

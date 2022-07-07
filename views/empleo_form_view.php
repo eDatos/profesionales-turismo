@@ -52,7 +52,7 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 	<!-- COMIENZO BLOQUE IZQUIERDO GRANDE -->
 	<div class="bloq_central">
 			<?php
-			if($operacion!='')
+			if(($operacion!='')&&(!$solo_lectura))
 			{
 			    switch($operacion)
 			    {
@@ -86,13 +86,12 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 			    echo '</div>';
 			}
 			?>
-		<div><h2 class="titulo_2" style="float:left;">Encuesta sobre el Empleo en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: <?= DateHelper::mes_tostring( $empleo_enc->mes,'M') ?> de <?= $empleo_enc->ano ?></h2>
+		<div><h2 class="titulo_2" style="float:left;">Encuesta sobre el Empleo: <?= DateHelper::mes_tostring( $empleo_enc->mes,'M') ?> de <?= $empleo_enc->ano ?></h2>
 		<div style="float:right;">Paso <?= ($fase+1) ?> de 4</div></div><div style="clear:both"></div>
     	<?php if(!$solo_lectura):?>
         <div class="cuadro fondo_rojo_claro" style="font-size:95%;padding:2px 2px 2px 4px;">
     		<b>ATENCIÓN: Grabe con frecuencia para evitar perder el trabajo.</b> Por motivos de seguridad los servidores cierran las sesiones que parecen inactivas.
     	</div>
-    	<?php endif ?>
 		<!-- COMIENZO CAJA AMARILLA -->
 		<div class="cuadro fondo_gris">
 		  <h2 class="titulo_2"><?= ($exts) ? 'Nueva empresa de trabajo temporal (ETT)':'Nueva Cuenta de Cotización'; ?></h2>
@@ -113,7 +112,7 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 				</tr>
 				<tr>
 					<td style="width:20%;"><label for="<?=ARG_NOMBRE_EMPRESA?>"><?= ($exts) ? 'Nombre de la Empresa' : 'Descripción' ?>:</label></td>
-					<td><input type="text" maxlength="90" style="margin-left:2px;width:400px;" name="<?=ARG_NOMBRE_EMPRESA?>"/></td>
+					<td><input type="text" maxlength="90" style="margin-left:2px;width:500px;" name="<?=ARG_NOMBRE_EMPRESA?>" <?= ($fase==0) ? 'placeholder="Indique tipo de personal por el que se cotiza en esta cuenta (ej.: fijo, temporal,...)"':'' ?>/></td>
 				</tr>
             </table>
             <div>
@@ -122,11 +121,14 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
             </form>                   
 		</div>
 		<!-- FIN CAJA AMARILLA --> 
+    	<?php endif ?>
         <!-- COMIENZO BLOQUE RESULTADOS DE LA BUSQUEDA -->
 		<div id="resultado">
 			<div>
 			<h2 style="display: inline-block" class="titulo_2"><?= ($exts)? 'Empleadores externos':'Cuentas de cotización'; ?></h2><br>
+			<?php if(!$solo_lectura):?>
 			<span><?= ($exts)? 'Seleccione las ETT de las que tiene personal en el mes de referencia para introducir, en el siguiente paso, la información del número de empleados. Si es necesario puede añadir nuevas ETT en el apartado superior "Nueva Empresa de Trabajo Temporal".':'Seleccione las cuentas de cotización activas para introducir, en el siguiente paso, la información de empleados por las que se cotiza en cada una. Si es necesario puede añadir nuevas cuentas de cotización en el apartado superior "Nueva Cuenta de Cotización".'; ?></span>
+			<?php endif ?>
 		    </div>
         <div class="subrayado"></div>
         <div><br></div>
@@ -165,8 +167,8 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
                               	<td class="fit2" title="<?= $row->id_empleador->getTipoLargo() ?>"><?= $row->id_empleador->toString() ?></td>
                                 <input name="<?=ARG_ESTID?>_<?= $nresultado ?>" type="hidden" value="<?= $row->id_establecimiento; ?>">
                                 <input name="<?=ARG_ID_EMPLEADOR?>_<?= $nresultado ?>" type="hidden" value="<?= $row->formatear(); ?>">
-                              	<td><input name="desc_<?= $nresultado ?>" id="desc_<?=$nresultado?>" type="text" class="" maxlength="90" style="width:100%;" data-prev="<?= $row->descripcion; ?>" value="<?= $row->descripcion; ?>"></td>
-                              	<td class="fit2"><input name="<?=ARG_ACTIVA?>_<?= $nresultado ?>" id="<?=ARG_ACTIVA?>_<?= $nresultado?>" type="checkbox" value="<?=EMPLEADOR_ACTIVO?>" data-prev="<?=($row->estado==EMPLEADOR_ACTIVO)?'true':'false' ?>" <?=($row->estado==EMPLEADOR_ACTIVO)?'checked':'' ?>/></td>
+                              	<td><input <?= ($solo_lectura) ? 'disabled ':'' ?>name="desc_<?= $nresultado ?>" id="desc_<?=$nresultado?>" type="text" class="" maxlength="90" style="width:100%;" data-prev="<?= $row->descripcion; ?>" value="<?= $row->descripcion; ?>"></td>
+                              	<td class="fit2"><input <?= ($solo_lectura) ? 'disabled ':'' ?>name="<?=ARG_ACTIVA?>_<?= $nresultado ?>" id="<?=ARG_ACTIVA?>_<?= $nresultado?>" type="checkbox" value="<?=EMPLEADOR_ACTIVO?>" data-prev="<?=($row->estado==EMPLEADOR_ACTIVO)?'true':'false' ?>" <?=($row->estado==EMPLEADOR_ACTIVO)?'checked':'' ?>/></td>
             				   </tr>
                               <?php $nresultado++; ?>
                           <?php endforeach; ?>                                         
@@ -183,14 +185,10 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 	
 	<div style="float:left;<?php if($solo_lectura):?>padding-top: 15px;<?php endif; ?>">
 		<a href="<?=$urlBack?>"><img src="images/volver.png" border="0"></a> <a href="<?=$urlBack?>" class="enlace" style=" position: relative; top: -2px;"><?= ($solo_lectura) ? 'Volver':'Salir de la encuesta' ?></a>
-		<?php if(!$solo_lectura):?>
-			<?php if($fase==0): ?>
-				<input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/>
-			<?php else: ?>
-				<input class="search btn_seguir" name="anteriorBtn" type="button" value="Anterior"/>
-				<input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/>
-			<?php endif ?>
+		<?php if($fase==2): ?>
+			<input class="search btn_seguir" name="anteriorBtn" type="button" value="Anterior"/>
 		<?php endif ?>
+		<input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/>
 		<?php if(isset($empleo_plazo)): ?>
 		<span style="padding-left:10px;">
 			Fecha límite: <font class="tx_marcado"><?= Datehelper::fecha_tostring($empleo_plazo,true) ?></font>
@@ -200,13 +198,6 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 
 </div>
 <!-- FIN BLOQUE INTERIOR -->			
-
-<div id="dialog-detail" title="Envío de encuesta" >
-	<div id="msg_errores" style="text-align: left"></div>
-</div>
-<div id="dialog-print" title="Imprimir encuesta" >
-    <div id="msg_impresion" style="text-align: left;"></div>
-</div>
 
 <?php else:
 	/*************************************/
@@ -264,11 +255,13 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 		}
 		*/
 	?>
+	<?php if(!$solo_lectura):?>
 	<form id="ef" method="POST" action="<?= $site[PAGE_EMPLEO_FORM_ENVIO]; ?>">
 		<input type="hidden" name="<?= ARG_MES ?>" value="<?= $empleo_enc->mes ?>">
 		<input type="hidden" name="<?= ARG_ANO ?>" value="<?= $empleo_enc->ano ?>">
 	</form>
-	<div><h2 class="titulo_2" style="float:left;">Encuesta sobre el Empleo en Establecimientos <?=($es_hotel ? "Hoteleros" : "Extrahoteleros" )?>: <?= DateHelper::mes_tostring( $empleo_enc->mes,'M') ?> de <?= $empleo_enc->ano ?></h2>
+	<?php endif ?>
+	<div><h2 class="titulo_2" style="float:left;">Encuesta sobre el Empleo: <?= DateHelper::mes_tostring( $empleo_enc->mes,'M') ?> de <?= $empleo_enc->ano ?></h2>
 	<div style="float:right;">Paso <?= ($fase+1) ?> de 4</div></div><div style="clear:both"></div>
     <?php if (count($data) > 0) : ?>
     	<?php if(!$solo_lectura):?>
@@ -295,8 +288,8 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
             <div>
                 <table class="tablaresultado" width="100%">
                   <tr>
-                    <th scope="col" width="15%">ID</th>
-                    <th scope="col">EMPRESA</th>
+                    <th scope="col" width="15%"><?= ($fase==1)? 'CUENTA DE COTIZACIÓN':'NIF' ?></th>
+                    <th scope="col"><?= ($fase==1)? 'DESCRIPCIÓN':'EMPRESA' ?></th>
                     <?php if(!$solo_lectura):?><th scope="col" width="10%">MES ANTERIOR</th><?php endif ?>
                     <th scope="col" width="10%">Nº EMPLEADOS</th>
                   </tr>
@@ -325,52 +318,39 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
             </div>
     	</div>
     	</form>  
-    	<div style="float:left;<?php if($solo_lectura):?>padding-top: 15px;<?php endif; ?>">
-    		<a href="<?=$urlBack?>"><img src="images/volver.png" border="0"></a> <a href="<?=$urlBack?>" class="enlace" style=" position: relative; top: -2px;"><?= ($solo_lectura) ? 'Volver':'Salir de la encuesta' ?></a>
-    		<?php if(!$solo_lectura):?>
-    			<input class="search btn_seguir" name="anteriorBtn" type="button" value="Anterior"/>
-    			<?php if($fase==1): ?>
-    				<input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/>
-    			<?php else: ?>
-    				<input class="search btn_guardar_enviar" name="enviarBtn" type="button" value="Guardar y enviar encuesta"/>
-    			<?php endif ?>
-    		<?php endif ?>
-    		<?php if(isset($empleo_plazo)): ?>
-    		<span style="padding-left:10px;">
-    			Fecha límite: <font class="tx_marcado"><?= Datehelper::fecha_tostring($empleo_plazo,true) ?></font>
-    		</span>
-    		<?php endif ?>		
-    	</div>
-    	<div style="float: right;">
-    		<input class="search btn_imprimir" name="imprimirBtn" type="button" value="Imprimir"/>
-    	</div>
     <?php else: ?>
         <div></div>
-        <div  style="font-size:125%;padding:2px 2px 2px 4px;">No hay trabajadores contratados a través de una ETT.</div>
+        <div  style="font-size:125%;padding:10px; background-color: #b4cae2"><?= ($fase==1)?'No hay cuentas de cotización activas.':'No hay trabajadores contratados a través de una ETT.' ?></div>
         <!-- <div style="margin-top:20px;"><a href="<?= $site[PAGE_EMPLEO_INDEX] ?>" class="enlace volvericon">Volver</a></div>  -->
-    	<div style="float:left;<?php if($solo_lectura):?>padding-top: 15px;<?php endif; ?>">
-    		<a href="<?=$urlBack?>"><img src="images/volver.png" border="0"></a> <a href="<?=$urlBack?>" class="enlace" style=" position: relative; top: -2px;"><?= ($solo_lectura) ? 'Volver':'Salir de la encuesta' ?></a>
-    		<?php if(!$solo_lectura):?>
-    			<input class="search btn_seguir" name="anteriorBtn" type="button" value="Anterior"/>
-    			<?php if($fase==1): ?>
-    				<input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/>
-    			<?php else: ?>
-    				<input class="search btn_guardar_enviar" name="enviarBtn" type="button" value="Guardar y enviar encuesta"/>
-    			<?php endif ?>
-    		<?php endif ?>
-    		<?php if(isset($empleo_plazo)): ?>
-    		<span style="padding-left:10px;">
-    			Fecha límite: <font class="tx_marcado"><?= Datehelper::fecha_tostring($empleo_plazo,true) ?></font>
-    		</span>
-    		<?php endif ?>		
-    	</div>
-    	<div style="float: right;">
-    		<input class="search btn_imprimir" name="imprimirBtn" type="button" value="Imprimir"/>
-    	</div>
     <?php endif; ?>
+	<div style="float:left;<?php if($solo_lectura):?>padding-top: 15px;<?php endif; ?>">
+		<a href="<?=$urlBack?>"><img src="images/volver.png" border="0"></a> <a href="<?=$urlBack?>" class="enlace" style=" position: relative; top: -2px;"><?= ($solo_lectura) ? 'Volver':'Salir de la encuesta' ?></a>
+		<input class="search btn_seguir" name="anteriorBtn" type="button" value="Anterior"/>
+		<?php if(!$solo_lectura):?>
+			<?php if($fase==1): ?>
+				<input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/>
+			<?php else: ?>
+				<input class="search btn_guardar_enviar" name="enviarBtn" type="button" value="Guardar y enviar encuesta"/>
+			<?php endif ?>
+		<?php else: ?>
+			<?php if($fase==1): ?><input class="search btn_seguir" name="guardarBtn" type="button" value="Siguiente"/><?php endif ?>
+		<?php endif ?>
+		<?php if(isset($empleo_plazo)): ?>
+		<span style="padding-left:10px;">
+			Fecha límite: <font class="tx_marcado"><?= Datehelper::fecha_tostring($empleo_plazo,true) ?></font>
+		</span>
+		<?php endif ?>
+	</div>
+	<?php if($fase==3): ?>
+	<div style="float: right;">
+		<input class="search btn_imprimir" name="imprimirBtn" type="button" value="Imprimir"/>
+	</div>
+	<?php endif; ?>
     
 </div>
 <!-- FIN BLOQUE INTERIOR -->
+<?php endif ?>
+
 
 <div id="dialog-detail" title="Envío de encuesta" >
 	<div id="msg_errores" style="text-align: left"></div>
@@ -378,7 +358,5 @@ externos= <?= (($fase==2)||($fase==3)) ? 'true':'false' ?>;
 <div id="dialog-print" title="Imprimir encuesta" >
     <div id="msg_impresion" style="text-align: left;"></div>
 </div>
-<?php endif ?>
-
 
 
